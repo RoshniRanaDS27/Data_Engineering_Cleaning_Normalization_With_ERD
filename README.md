@@ -23,6 +23,9 @@ How does access to modern family planning methods vary across different regions 
 * In this stage data cleaning was on focus. 
 * Here, I prioritized data cleaning and quality by addressing issues like missing values, nulls, duplicates, outliers, changing data physical type and 
 * Ensuring standardization with Python. Hence, This meticulous preparation ensures that the data aligns seamlessly with analysis goals.
+* Extracted Clean .CSV File
+* https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/tree/main/Extracted%20Cleaned%20Data%20File
+  
 
 # Step 03: Data Transformation ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/cee5f36f-6618-4774-a7dd-993456b3f4a3)
 
