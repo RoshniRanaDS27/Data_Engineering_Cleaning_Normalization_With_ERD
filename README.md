@@ -78,14 +78,19 @@ On the other hand, the Eastern Mediterranean has the lowest percentage at 50.3%.
 # Country Level Analysis
 ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/208bac75-c4a6-4e41-945c-628a02c19141)
   
+# Top Three Countries within each Continent - Family Planning Data set
+![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/716a11c2-c1dc-4978-87c5-ab9d9ab3a2f9)
+
 Here are the highlights for the top three countries within each continent. In Africa, Zimbabwe leads with 84.8% of women  
 having their needs met. Egypt leads in the Eastern Mediterranean with 80%. Europe sees France at the forefront with 95.5%.  
 The Democratic People's Republic of Korea leads South-East Asia at 89.6%, and in the Western Pacific, China stands out with an impressive 96.6%.  
 #
-# Top Three Countries within each Continent - Family Planning Data set
-![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/716a11c2-c1dc-4978-87c5-ab9d9ab3a2f9)
-
 # Step 06: Data visualization ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/606cc427-afc7-4cf3-a2e8-1c5ffb4d58ee)
+  
+Here are the highlights for the top three countries within each continent. In Africa, Zimbabwe leads with 84.8% of women  
+having their needs met. Egypt leads in the Eastern Mediterranean with 80%. Europe sees France at the forefront with 95.5%.  
+The Democratic People's Republic of Korea leads South-East Asia at 89.6%, and in the Western Pacific, China stands out with an impressive 96.6%.  
+#
 
 involves data visualization for further analysis with Interactive Geoographical Heat Map  
 where I transformed complex findings into clear, insightful visual representations.   
