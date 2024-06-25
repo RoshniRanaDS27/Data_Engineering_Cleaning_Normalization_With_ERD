@@ -12,34 +12,38 @@ How does access to modern family planning methods vary across different regions 
 
 # Step 1: Data collection
 - Sources: WHO datasets WHO Indicators.
+- Source link:  https://www.who.int/data/gho/data/indicators/indicator-details/GHO/married-or-in-union-women-of-reproductive-age-who-have-their-need-for-family-planning-satisfied-with-modern-methods-(-)
   
-This Project journey involves data collection from The World Health Organization Relational Data Hub.   
-From where had collected data set Related to Women’s maternal and reproductive health which is related to family planning satisfied with modern methods (%),   
-here Ensuring the reliability and relevance of  data was paramount for me as it formed the foundation for the depth and accuracy of our analysis.  
+* This Project journey involves data collection from The World Health Organization Relational Data Hub.   
+* Had collected data set Related to Women’s maternal and reproductive health which is related to family planning satisfied with modern methods (%),   
+* Here Ensuring the reliability and relevance of  data was paramount for me as it formed the foundation for the depth and accuracy of our analysis.  
 
-Source link:  https://www.who.int/data/gho/data/indicators/indicator-details/GHO/married-or-in-union-women-of-reproductive-age-who-have-their-need-for-family-planning-satisfied-with-modern-methods-(-)
+# Step 02: Data cleaning ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/79ef9430-0100-4aac-ae03-91e58391ffcb)
 
-# Step 02: Data cleaning
-In this stage data cleaning was on focus. 
-Here, I prioritized data cleaning and quality by addressing issues like missing values, nulls, duplicates, outliers, changing data physical type and 
-ensuring standardization with Python. Hence, This meticulous preparation ensures that the data aligns seamlessly with analysis goals.
+* In this stage data cleaning was on focus. 
+* Here, I prioritized data cleaning and quality by addressing issues like missing values, nulls, duplicates, outliers, changing data physical type and 
+* Ensuring standardization with Python. Hence, This meticulous preparation ensures that the data aligns seamlessly with analysis goals.
 
-# Step 03: Data Transformation
-Step three involves data transformation, where I have shaped the data to fit the needs of analysis.   
-This includes normalization to ensure consistency and clarity in data representation, setting the stage for effective modeling.
+# Step 03: Data Transformation ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/cee5f36f-6618-4774-a7dd-993456b3f4a3)
 
-# Step 04: Data modeling
+* Step three involves data transformation, where I have shaped the data to fit the needs of analysis.   
+* This includes normalization to ensure consistency and clarity in data representation, setting the stage for effective modeling.
+
+# Step 04: Data modeling ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/f6e65725-0164-4626-864e-b02cf451fc8f)
+
 crafting entity-relationship diagrams (ERDs) and establishing connections between datasets by Postgre-SQL and assigning primary and foreign keys within each tables. 
 
   ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/c3291103-1c4b-49ab-91d2-1e8643f07c17)
 
 
 
-# Step 05: Exploratory data analysis 
+# Step 05: Exploratory data analysis ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/c3f9eba7-c9eb-444a-a09b-339a4fc27456)
+
 Delved into exploratory data analysis using Python libraries, and explored patterns with cleaned data sets.   
 This phase unveils insights and prepares the data for meaningful visualizations.
 
-# Step 06: Data visualization 
+# Step 06: Data visualization ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/606cc427-afc7-4cf3-a2e8-1c5ffb4d58ee)
+
 involves data visualization for further analysis with Interactive Geoographical Heat Map  
 where I transformed complex findings into clear, insightful visual representations.   
 This step ensures that the results are not only understood but also actionable for stakeholders. 
