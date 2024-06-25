@@ -73,13 +73,12 @@ Here, We we can see, Analysis on continents level for the percentage of Married 
 family planning methods to control if and when they can have children. Also, we had included a geo heat map in our project as well with HTML File, screen shot of map that is on the screen.  
 modern family planning methods varies significantly across regions and socioeconomic groups globally. In the Americas and Southeast Asia,  
 access rates are notably higher, around 72% and 71% respectively. This high rate can be depends, due to better healthcare infrastructure, services, education, awareness and availability of Tech fields within that regions.  
-On the other hand, the Eastern Mediterranean has the lowest percentage at 50.3%. lower rate can be often due to cultural barriers, lack of this facilities.  
-These disparities show the varying levels of support and challenges different regions face in providing family planning services.  
+On the other hand, the Eastern Mediterranean has the lowest percentage at 50.3%. lower rate can be often due to cultural barriers, lack of this facilities. These disparities show the varying levels of support and challenges different regions face in providing family planning services.  
 #
 # Country Level Analysis
 ![image](https://github.com/RoshniRanaDS/Data_Engineering_Cleaning_Normalization_With_ERD/assets/161755928/208bac75-c4a6-4e41-945c-628a02c19141)
   
-here are the highlights for the top three countries within each continent. In Africa, Zimbabwe leads with 84.8% of women  
+Here are the highlights for the top three countries within each continent. In Africa, Zimbabwe leads with 84.8% of women  
 having their needs met. Egypt leads in the Eastern Mediterranean with 80%. Europe sees France at the forefront with 95.5%.  
 The Democratic People's Republic of Korea leads South-East Asia at 89.6%, and in the Western Pacific, China stands out with an impressive 96.6%.  
 #
