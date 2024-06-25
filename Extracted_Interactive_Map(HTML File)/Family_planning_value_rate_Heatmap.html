@@ -1,0 +1,3655 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c2cddf9e38fd9918549c5e7a22d8b97f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c2cddf9e38fd9918549c5e7a22d8b97f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c2cddf9e38fd9918549c5e7a22d8b97f = L.map(
+                "map_c2cddf9e38fd9918549c5e7a22d8b97f",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_86d7afc6e33bc225245e5e2af5437b50 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_86d7afc6e33bc225245e5e2af5437b50.addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+            var heat_map_c622390e49dc62586fc8d45b0195c16d = L.heatLayer(
+                [[-6.257732428506092, 34.75298985475595, 55.1], [45.70562800215178, -112.5994359115045, 78.4], [48.19166075218232, 67.2846109811001, 73.2], [-6.451644514630347, 145.31757462782247, 49.2], [-2.221737936520542, 117.42340756227364, 77.3], [-35.4468214894951, -65.17536077114173, 80.3], [-2.8502757110956667, 23.582955831479083, 33.0], [4.752347756504953, 45.72670076723565, 2.1], [0.5959662521769523, 37.791555286661385, 77.1], [15.990585003116717, 29.862604012257922, 30.2], [15.328867399839682, 18.581329525332894, 17.5], [18.900700691843337, -72.65801330535574, 45.4], [18.884487087982258, -70.46235845697531, 77.4], [61.98084075071274, 96.87522325596434, 72.4], [-8.767760362467003, 125.96630027368401, 45.9], [-28.947033259979115, 25.048013879861678, 79.7], [-29.625290493692013, 28.170105295170494, 82.8], [23.935371902244835, -102.5763495239869, 83.1], [-10.806773643498916, -53.05434003576711, 89.3], [-16.72898701530584, -64.64140560603113, 50.3], [-9.191562905134553, -74.39180581684722, 65.9], [3.927213862709704, -73.07773208697478, 86.6], [8.530019388864652, -80.10916483549376, 65.2], [9.965671127464528, -84.17542309600948, 80.8], [12.848190428036988, -85.02031850080252, 89.8], [14.822947081652929, -86.58996383801542, 79.0], [13.726091625794197, -88.87290317032377, 80.0], [15.699360612026911, -90.36945836053154, 66.1], [17.197089911451545, -88.70342125299318, 64.9], [4.790225375174759, -58.97120310856251, 46.6], [4.1200080317588865, -55.91145629952073, 57.5], [42.46070432663372, -2.8766966992706267, 95.5], [-1.4547717055405804, -78.38416674608374, 82.5], [18.137636127868436, -77.32425480164892, 82.9], [21.631751541025228, -78.96068490970256, 86.9], [-18.906987947858802, 29.788548371892524, 84.8], [-22.099711378826413, 23.773081465789428, 82.1], [-22.099776931731068, 17.156168126194093, 80.4], [14.354139988452022, -14.50980278585943, 53.2], [17.267772061700715, -3.543294339453343, 41.2], [20.20926720635376, -10.326396925234992, 22.4], [9.647430780663699, 2.337377553496156, 28.0], [17.345552814745542, 9.324427099857923, 36.9], [9.548318418209965, 7.995127754089786, 35.6], [5.663095287992696, 12.611551546501774, 44.9], [8.439541954669616, 0.9964039436703582, 39.6], [7.928651813099648, -1.2369685557063992, 40.4], [7.5537550070104915, -5.6120436452252225, 46.1], [10.44827287727134, -11.060853741185456, 37.7], [12.022704382325685, -15.110623751667879, 60.0], [6.431619862252993, -9.410836154371117, 47.5], [8.53035372615305, -11.795257428559948, 53.0], [12.311650494136712, -1.77653745205594, 58.2], [6.5427787059213145, 20.374347291243915, 27.6], [-0.8378010872252886, 15.13446176741353, 43.2], [-0.6470481398040288, 11.687751174902044, 44.0], [1.6458643199600753, 10.366031325064027, 20.5], [-13.395067553524187, 27.727591918760577, 65.9], [-13.172834992341919, 34.193605326922366, 77.3], [-17.230448975659677, 35.47261597864435, 55.5], [-26.48985528852001, 31.39525590206532, 82.9], [-12.245869036133188, 17.47057255231345, 29.8], [-3.3773910753554657, 29.91389229542573, 39.6], [-19.356114077828778, 46.69117091471639, 65.6], [31.94113662241515, 35.27331962289024, 61.0], [13.47533435870166, -15.431872807730837, 41.1], [34.172939036882376, 9.534716120695835, 62.7], [28.185481278657537, 2.5980477916183444, 66.3], [31.245490584748417, 36.77945490632519, 56.7], [25.32185097420669, 51.1835025789133, 68.9], [33.03682096372491, 43.75691096461423, 53.8], [20.611174374229545, 56.09867281997542, 39.6], [-15.542677057554924, 167.07375126822674, 50.7], [12.684728629393506, 104.87608532525192, 56.5], [15.01697499141648, 101.00613354626108, 88.2], [18.444978089036088, 103.75025989504465, 72.3], [21.016999873773827, 96.50584094206161, 74.9], [16.657937753254938, 106.28584079705195, 72.1], [40.14302033650109, 127.16501590888976, 89.6], [46.82368112626357, 102.94640620846634, 63.6], [22.92500640740852, 79.59370376325381, 72.8], [23.83946179534406, 90.26792827719598, 77.4], [27.427968649102027, 90.4724248062037, 84.6], [28.23944001904935, 84.01317367692529, 61.9], [29.973460025547393, 69.41399806318127, 48.5], [33.85639928169076, 66.08669022192831, 42.1], [38.58308146421082, 71.03443504896113, 52.1], [41.50689371318262, 74.62040481092558, 64.6], [39.09124018017583, 59.27543026236141, 79.6], [32.51891731762539, 54.285451496891426, 68.6], [35.012614281129, 38.54423941961137, 53.3], [40.21660761230143, 45.00029001101479, 40.2], [62.811484968080336, 16.59626584684802, 86.7], [53.50634479481114, 27.98135261544803, 66.0], [48.97301760592337, 31.369528906580406, 68.0], [47.20367642606752, 28.41048279080328, 59.5], [45.857101035738005, 24.943252494635377, 46.5], [58.643695426630906, 25.824725613026608, 80.2], [39.06837194061471, 35.116900150938406, 60.2], [41.141353306048785, 20.03242643144321, 6.3], [-8.852497470848528, 159.9666154474296, 38.0], [7.700534417248105, 80.66723574931648, 74.3], [36.555066531858685, 103.88361230063249, 96.6], [53.91477348053706, -2.8531353951805545, 86.5], [40.22069054766167, 47.553909558006055, 21.5], [42.16201501415301, 43.48154265409026, 51.3], [11.763799362297663, 122.90267236988682, 56.0], [49.775245294369, 15.334558102365815, 85.7], [15.427276751412931, 38.67818692786484, 21.0], [-23.248041946292087, -58.387387833505706, 78.9], [15.913231950143004, 47.535044758543485, 40.5], [29.885394698302058, -8.420479544549693, 72.0], [26.50661999974957, 29.844461513124415, 80.0], [26.997460407020338, 17.974352779160352, 24.0], [8.653999188132575, 39.551255792937745, 62.6], [1.2954855035097297, 32.35755031998686, 65.5], [-2.0135144658341346, 29.91896392224289, 72.1], [44.1807677629747, 17.816883270390086, 21.9], [41.60592964714007, 21.697903375280845, 29.6], [44.23303653365162, 20.819651926382583, 38.4], [42.78903960655908, 19.2861817215929, 32.9], [10.428237089201879, -61.33036691444967, 58.2], [7.292890133516845, 30.198617582461907, 5.6]],
+                {"blur": 10, "gradient": {"0.0": "#800000", "0.5": "red", "0.7": "orange", "0.8": "lime", "1.0": "green"}, "maxZoom": 18, "minOpacity": 0.5, "radius": 20}
+            );
+        
+    
+            heat_map_c622390e49dc62586fc8d45b0195c16d.addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+            var circle_marker_7a326b96a6c9a4dfcecc9a513c4173a9 = L.circleMarker(
+                [-6.257732428506092, 34.75298985475595],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_0ba3d536ca89fcfa1cfb42e6bd9320ca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_05d74e382cdce51ac3a29ab6e11fc338 = $(`<div id="html_05d74e382cdce51ac3a29ab6e11fc338" style="width: 100.0%; height: 100.0%;">United Republic of Tanzania<br>Planning Value Rate: 55.1%</div>`)[0];
+                popup_0ba3d536ca89fcfa1cfb42e6bd9320ca.setContent(html_05d74e382cdce51ac3a29ab6e11fc338);
+            
+        
+
+        circle_marker_7a326b96a6c9a4dfcecc9a513c4173a9.bindPopup(popup_0ba3d536ca89fcfa1cfb42e6bd9320ca)
+        ;
+
+        
+    
+    
+            circle_marker_7a326b96a6c9a4dfcecc9a513c4173a9.bindTooltip(
+                `<div>
+                     United Republic of Tanzania - 55.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e6aa7a1cc3c1e3fbaddf02781d24f7ce = L.circleMarker(
+                [45.70562800215178, -112.5994359115045],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_a25eca749d0cf52d36dfa51f4b254e88 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_af47148a8ae375e2f065eb67ca0fecba = $(`<div id="html_af47148a8ae375e2f065eb67ca0fecba" style="width: 100.0%; height: 100.0%;">United States of America<br>Planning Value Rate: 78.4%</div>`)[0];
+                popup_a25eca749d0cf52d36dfa51f4b254e88.setContent(html_af47148a8ae375e2f065eb67ca0fecba);
+            
+        
+
+        circle_marker_e6aa7a1cc3c1e3fbaddf02781d24f7ce.bindPopup(popup_a25eca749d0cf52d36dfa51f4b254e88)
+        ;
+
+        
+    
+    
+            circle_marker_e6aa7a1cc3c1e3fbaddf02781d24f7ce.bindTooltip(
+                `<div>
+                     United States of America - 78.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f5d3142e0e01ea22077453a578af3a17 = L.circleMarker(
+                [48.19166075218232, 67.2846109811001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_362d63eb1354b1e84c4c023a549bcc83 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b638f33b7cab61f4df35645ae72bfa29 = $(`<div id="html_b638f33b7cab61f4df35645ae72bfa29" style="width: 100.0%; height: 100.0%;">Kazakhstan<br>Planning Value Rate: 73.2%</div>`)[0];
+                popup_362d63eb1354b1e84c4c023a549bcc83.setContent(html_b638f33b7cab61f4df35645ae72bfa29);
+            
+        
+
+        circle_marker_f5d3142e0e01ea22077453a578af3a17.bindPopup(popup_362d63eb1354b1e84c4c023a549bcc83)
+        ;
+
+        
+    
+    
+            circle_marker_f5d3142e0e01ea22077453a578af3a17.bindTooltip(
+                `<div>
+                     Kazakhstan - 73.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_25a6e2a442c7cacfe2420e788e98761e = L.circleMarker(
+                [-6.451644514630347, 145.31757462782247],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_704e0d723c6d185d8a58639ceeb22906 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b7dfad7ce0944637e1bc8b634e4364aa = $(`<div id="html_b7dfad7ce0944637e1bc8b634e4364aa" style="width: 100.0%; height: 100.0%;">Papua New Guinea<br>Planning Value Rate: 49.2%</div>`)[0];
+                popup_704e0d723c6d185d8a58639ceeb22906.setContent(html_b7dfad7ce0944637e1bc8b634e4364aa);
+            
+        
+
+        circle_marker_25a6e2a442c7cacfe2420e788e98761e.bindPopup(popup_704e0d723c6d185d8a58639ceeb22906)
+        ;
+
+        
+    
+    
+            circle_marker_25a6e2a442c7cacfe2420e788e98761e.bindTooltip(
+                `<div>
+                     Papua New Guinea - 49.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fb3d50a0b192fac5450db589b9c54070 = L.circleMarker(
+                [-2.221737936520542, 117.42340756227364],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_9e959bc3831a3fdc4b77d49561c91edd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d402b9e0c5e488f71ef0c3d97195b67d = $(`<div id="html_d402b9e0c5e488f71ef0c3d97195b67d" style="width: 100.0%; height: 100.0%;">Indonesia<br>Planning Value Rate: 77.3%</div>`)[0];
+                popup_9e959bc3831a3fdc4b77d49561c91edd.setContent(html_d402b9e0c5e488f71ef0c3d97195b67d);
+            
+        
+
+        circle_marker_fb3d50a0b192fac5450db589b9c54070.bindPopup(popup_9e959bc3831a3fdc4b77d49561c91edd)
+        ;
+
+        
+    
+    
+            circle_marker_fb3d50a0b192fac5450db589b9c54070.bindTooltip(
+                `<div>
+                     Indonesia - 77.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8fa27c7d18b0b9079f1a6bb817599596 = L.circleMarker(
+                [-35.4468214894951, -65.17536077114173],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_95db8feed0bd452c1a7610124d6c5216 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d38be85936bdf56342a35298e7e4273e = $(`<div id="html_d38be85936bdf56342a35298e7e4273e" style="width: 100.0%; height: 100.0%;">Argentina<br>Planning Value Rate: 80.3%</div>`)[0];
+                popup_95db8feed0bd452c1a7610124d6c5216.setContent(html_d38be85936bdf56342a35298e7e4273e);
+            
+        
+
+        circle_marker_8fa27c7d18b0b9079f1a6bb817599596.bindPopup(popup_95db8feed0bd452c1a7610124d6c5216)
+        ;
+
+        
+    
+    
+            circle_marker_8fa27c7d18b0b9079f1a6bb817599596.bindTooltip(
+                `<div>
+                     Argentina - 80.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e9406b2a9b3c361e9b7d70522ded0c30 = L.circleMarker(
+                [-2.8502757110956667, 23.582955831479083],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_5fabcfb3faf3425d6bced618a78b2931 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2273a3c616844be32d7ff21539a0f57e = $(`<div id="html_2273a3c616844be32d7ff21539a0f57e" style="width: 100.0%; height: 100.0%;">Democratic Republic of the Congo<br>Planning Value Rate: 33.0%</div>`)[0];
+                popup_5fabcfb3faf3425d6bced618a78b2931.setContent(html_2273a3c616844be32d7ff21539a0f57e);
+            
+        
+
+        circle_marker_e9406b2a9b3c361e9b7d70522ded0c30.bindPopup(popup_5fabcfb3faf3425d6bced618a78b2931)
+        ;
+
+        
+    
+    
+            circle_marker_e9406b2a9b3c361e9b7d70522ded0c30.bindTooltip(
+                `<div>
+                     Democratic Republic of the Congo - 33.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_734424a4df91f7e60e3d141380b331e0 = L.circleMarker(
+                [4.752347756504953, 45.72670076723565],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_6e73cb2e439bb2521acccdb57970f69f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fb3d10ca943e3e1b5556129f903c1e3 = $(`<div id="html_8fb3d10ca943e3e1b5556129f903c1e3" style="width: 100.0%; height: 100.0%;">Somalia<br>Planning Value Rate: 2.1%</div>`)[0];
+                popup_6e73cb2e439bb2521acccdb57970f69f.setContent(html_8fb3d10ca943e3e1b5556129f903c1e3);
+            
+        
+
+        circle_marker_734424a4df91f7e60e3d141380b331e0.bindPopup(popup_6e73cb2e439bb2521acccdb57970f69f)
+        ;
+
+        
+    
+    
+            circle_marker_734424a4df91f7e60e3d141380b331e0.bindTooltip(
+                `<div>
+                     Somalia - 2.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_40852f1cf72960979255728b27e80730 = L.circleMarker(
+                [0.5959662521769523, 37.791555286661385],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_ca0d6d1dcfe3e78cd461930b99c2574e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0ca7080599c9693931d117f67654a17b = $(`<div id="html_0ca7080599c9693931d117f67654a17b" style="width: 100.0%; height: 100.0%;">Kenya<br>Planning Value Rate: 77.1%</div>`)[0];
+                popup_ca0d6d1dcfe3e78cd461930b99c2574e.setContent(html_0ca7080599c9693931d117f67654a17b);
+            
+        
+
+        circle_marker_40852f1cf72960979255728b27e80730.bindPopup(popup_ca0d6d1dcfe3e78cd461930b99c2574e)
+        ;
+
+        
+    
+    
+            circle_marker_40852f1cf72960979255728b27e80730.bindTooltip(
+                `<div>
+                     Kenya - 77.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5a277f37c66924654418d70daa36ff5f = L.circleMarker(
+                [15.990585003116717, 29.862604012257922],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_401d4bf260ec470eace13ba5e65ed181 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8c302a2615d55039b689e9e5bb861dc8 = $(`<div id="html_8c302a2615d55039b689e9e5bb861dc8" style="width: 100.0%; height: 100.0%;">Sudan<br>Planning Value Rate: 30.2%</div>`)[0];
+                popup_401d4bf260ec470eace13ba5e65ed181.setContent(html_8c302a2615d55039b689e9e5bb861dc8);
+            
+        
+
+        circle_marker_5a277f37c66924654418d70daa36ff5f.bindPopup(popup_401d4bf260ec470eace13ba5e65ed181)
+        ;
+
+        
+    
+    
+            circle_marker_5a277f37c66924654418d70daa36ff5f.bindTooltip(
+                `<div>
+                     Sudan - 30.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7865c0f7ab0f621474dc6a361f42c565 = L.circleMarker(
+                [15.328867399839682, 18.581329525332894],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_92d048360cb88cb1381604f6223a1250 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d1c93b80f7924c42d3ba2a4d5b3d068c = $(`<div id="html_d1c93b80f7924c42d3ba2a4d5b3d068c" style="width: 100.0%; height: 100.0%;">Chad<br>Planning Value Rate: 17.5%</div>`)[0];
+                popup_92d048360cb88cb1381604f6223a1250.setContent(html_d1c93b80f7924c42d3ba2a4d5b3d068c);
+            
+        
+
+        circle_marker_7865c0f7ab0f621474dc6a361f42c565.bindPopup(popup_92d048360cb88cb1381604f6223a1250)
+        ;
+
+        
+    
+    
+            circle_marker_7865c0f7ab0f621474dc6a361f42c565.bindTooltip(
+                `<div>
+                     Chad - 17.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_32cab317bbc8994abe882ce598225780 = L.circleMarker(
+                [18.900700691843337, -72.65801330535574],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_0d2e90685dd3e697f04fc768c684f3d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_154697ad96b274dedc8528ec2575b5ef = $(`<div id="html_154697ad96b274dedc8528ec2575b5ef" style="width: 100.0%; height: 100.0%;">Haiti<br>Planning Value Rate: 45.4%</div>`)[0];
+                popup_0d2e90685dd3e697f04fc768c684f3d6.setContent(html_154697ad96b274dedc8528ec2575b5ef);
+            
+        
+
+        circle_marker_32cab317bbc8994abe882ce598225780.bindPopup(popup_0d2e90685dd3e697f04fc768c684f3d6)
+        ;
+
+        
+    
+    
+            circle_marker_32cab317bbc8994abe882ce598225780.bindTooltip(
+                `<div>
+                     Haiti - 45.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_908ea66e5cda9c47c544cbee626510fa = L.circleMarker(
+                [18.884487087982258, -70.46235845697531],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_498572df0ee3b143035605d111027723 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e736c2db46ef849391807c2d1462eba = $(`<div id="html_8e736c2db46ef849391807c2d1462eba" style="width: 100.0%; height: 100.0%;">Dominican Republic<br>Planning Value Rate: 77.4%</div>`)[0];
+                popup_498572df0ee3b143035605d111027723.setContent(html_8e736c2db46ef849391807c2d1462eba);
+            
+        
+
+        circle_marker_908ea66e5cda9c47c544cbee626510fa.bindPopup(popup_498572df0ee3b143035605d111027723)
+        ;
+
+        
+    
+    
+            circle_marker_908ea66e5cda9c47c544cbee626510fa.bindTooltip(
+                `<div>
+                     Dominican Republic - 77.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a332acc3d580f8e1249113ff2fd77487 = L.circleMarker(
+                [61.98084075071274, 96.87522325596434],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_db44a3280773da2d72ca4a17faa93036 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_07b3fec932a93f9f81eff40cab03b4f9 = $(`<div id="html_07b3fec932a93f9f81eff40cab03b4f9" style="width: 100.0%; height: 100.0%;">Russian Federation<br>Planning Value Rate: 72.4%</div>`)[0];
+                popup_db44a3280773da2d72ca4a17faa93036.setContent(html_07b3fec932a93f9f81eff40cab03b4f9);
+            
+        
+
+        circle_marker_a332acc3d580f8e1249113ff2fd77487.bindPopup(popup_db44a3280773da2d72ca4a17faa93036)
+        ;
+
+        
+    
+    
+            circle_marker_a332acc3d580f8e1249113ff2fd77487.bindTooltip(
+                `<div>
+                     Russian Federation - 72.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_205848c0b6eb922b3b53b259080cca92 = L.circleMarker(
+                [-8.767760362467003, 125.96630027368401],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_cc1a75e4afef1b55c5d55b5fd0982f2e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2a4c6de82ef47e129cfc035da8304141 = $(`<div id="html_2a4c6de82ef47e129cfc035da8304141" style="width: 100.0%; height: 100.0%;">Timor-Leste<br>Planning Value Rate: 45.9%</div>`)[0];
+                popup_cc1a75e4afef1b55c5d55b5fd0982f2e.setContent(html_2a4c6de82ef47e129cfc035da8304141);
+            
+        
+
+        circle_marker_205848c0b6eb922b3b53b259080cca92.bindPopup(popup_cc1a75e4afef1b55c5d55b5fd0982f2e)
+        ;
+
+        
+    
+    
+            circle_marker_205848c0b6eb922b3b53b259080cca92.bindTooltip(
+                `<div>
+                     Timor-Leste - 45.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8fabe21823d2c8d7ec1a314283e38801 = L.circleMarker(
+                [-28.947033259979115, 25.048013879861678],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_677a023b4a39b2d48081808d734fac2c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c4490f6261d3d340d005bace1d50a4f = $(`<div id="html_7c4490f6261d3d340d005bace1d50a4f" style="width: 100.0%; height: 100.0%;">South Africa<br>Planning Value Rate: 79.7%</div>`)[0];
+                popup_677a023b4a39b2d48081808d734fac2c.setContent(html_7c4490f6261d3d340d005bace1d50a4f);
+            
+        
+
+        circle_marker_8fabe21823d2c8d7ec1a314283e38801.bindPopup(popup_677a023b4a39b2d48081808d734fac2c)
+        ;
+
+        
+    
+    
+            circle_marker_8fabe21823d2c8d7ec1a314283e38801.bindTooltip(
+                `<div>
+                     South Africa - 79.7%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1944307dcce8239da2ee563b459516d8 = L.circleMarker(
+                [-29.625290493692013, 28.170105295170494],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_2040e211fa93c8aae79ce7a6c5787c5e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f27784ff8e210fb65c7da4936d63b88 = $(`<div id="html_4f27784ff8e210fb65c7da4936d63b88" style="width: 100.0%; height: 100.0%;">Lesotho<br>Planning Value Rate: 82.8%</div>`)[0];
+                popup_2040e211fa93c8aae79ce7a6c5787c5e.setContent(html_4f27784ff8e210fb65c7da4936d63b88);
+            
+        
+
+        circle_marker_1944307dcce8239da2ee563b459516d8.bindPopup(popup_2040e211fa93c8aae79ce7a6c5787c5e)
+        ;
+
+        
+    
+    
+            circle_marker_1944307dcce8239da2ee563b459516d8.bindTooltip(
+                `<div>
+                     Lesotho - 82.8%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1ec61fad1799d94974c33bd48a58f3bc = L.circleMarker(
+                [23.935371902244835, -102.5763495239869],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_577911cc9d26a5e6b96ff964e706aca3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59724d9f6f286206754adcf107f3409e = $(`<div id="html_59724d9f6f286206754adcf107f3409e" style="width: 100.0%; height: 100.0%;">Mexico<br>Planning Value Rate: 83.1%</div>`)[0];
+                popup_577911cc9d26a5e6b96ff964e706aca3.setContent(html_59724d9f6f286206754adcf107f3409e);
+            
+        
+
+        circle_marker_1ec61fad1799d94974c33bd48a58f3bc.bindPopup(popup_577911cc9d26a5e6b96ff964e706aca3)
+        ;
+
+        
+    
+    
+            circle_marker_1ec61fad1799d94974c33bd48a58f3bc.bindTooltip(
+                `<div>
+                     Mexico - 83.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_13b553da69cabc180f2e97c665c0173c = L.circleMarker(
+                [-10.806773643498916, -53.05434003576711],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_34e72d18285f213280d5be9bff22c35e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_888010b348d613bae113c8f1933cab2f = $(`<div id="html_888010b348d613bae113c8f1933cab2f" style="width: 100.0%; height: 100.0%;">Brazil<br>Planning Value Rate: 89.3%</div>`)[0];
+                popup_34e72d18285f213280d5be9bff22c35e.setContent(html_888010b348d613bae113c8f1933cab2f);
+            
+        
+
+        circle_marker_13b553da69cabc180f2e97c665c0173c.bindPopup(popup_34e72d18285f213280d5be9bff22c35e)
+        ;
+
+        
+    
+    
+            circle_marker_13b553da69cabc180f2e97c665c0173c.bindTooltip(
+                `<div>
+                     Brazil - 89.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_208693114ad8c4c829580d9c7fbc283c = L.circleMarker(
+                [-16.72898701530584, -64.64140560603113],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_ee1631672c891ec39b34c722bd7e42a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a892966aa1c11c088eb7f0317114b9f7 = $(`<div id="html_a892966aa1c11c088eb7f0317114b9f7" style="width: 100.0%; height: 100.0%;">Bolivia (Plurinational State of)<br>Planning Value Rate: 50.3%</div>`)[0];
+                popup_ee1631672c891ec39b34c722bd7e42a8.setContent(html_a892966aa1c11c088eb7f0317114b9f7);
+            
+        
+
+        circle_marker_208693114ad8c4c829580d9c7fbc283c.bindPopup(popup_ee1631672c891ec39b34c722bd7e42a8)
+        ;
+
+        
+    
+    
+            circle_marker_208693114ad8c4c829580d9c7fbc283c.bindTooltip(
+                `<div>
+                     Bolivia (Plurinational State of) - 50.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b5c7413bda49a73761511194e8d040a4 = L.circleMarker(
+                [-9.191562905134553, -74.39180581684722],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_935bed4ad5b802092ceb670271b2c104 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1624a1158700764f28eeaf3fbb768677 = $(`<div id="html_1624a1158700764f28eeaf3fbb768677" style="width: 100.0%; height: 100.0%;">Peru<br>Planning Value Rate: 65.9%</div>`)[0];
+                popup_935bed4ad5b802092ceb670271b2c104.setContent(html_1624a1158700764f28eeaf3fbb768677);
+            
+        
+
+        circle_marker_b5c7413bda49a73761511194e8d040a4.bindPopup(popup_935bed4ad5b802092ceb670271b2c104)
+        ;
+
+        
+    
+    
+            circle_marker_b5c7413bda49a73761511194e8d040a4.bindTooltip(
+                `<div>
+                     Peru - 65.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_86ac8235069f7c771fc2e853aa01684e = L.circleMarker(
+                [3.927213862709704, -73.07773208697478],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_a7fc539a0dbed876656b243abeba22bb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_942affa094c63ddd0ee1f260e185323a = $(`<div id="html_942affa094c63ddd0ee1f260e185323a" style="width: 100.0%; height: 100.0%;">Colombia<br>Planning Value Rate: 86.6%</div>`)[0];
+                popup_a7fc539a0dbed876656b243abeba22bb.setContent(html_942affa094c63ddd0ee1f260e185323a);
+            
+        
+
+        circle_marker_86ac8235069f7c771fc2e853aa01684e.bindPopup(popup_a7fc539a0dbed876656b243abeba22bb)
+        ;
+
+        
+    
+    
+            circle_marker_86ac8235069f7c771fc2e853aa01684e.bindTooltip(
+                `<div>
+                     Colombia - 86.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a94504f35368d9858020e369f713b6b4 = L.circleMarker(
+                [8.530019388864652, -80.10916483549376],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8ca1462715a2c4d1278d3d8039017c4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e447dba68ca42ecc3aa8e85fb281466 = $(`<div id="html_8e447dba68ca42ecc3aa8e85fb281466" style="width: 100.0%; height: 100.0%;">Panama<br>Planning Value Rate: 65.2%</div>`)[0];
+                popup_8ca1462715a2c4d1278d3d8039017c4d.setContent(html_8e447dba68ca42ecc3aa8e85fb281466);
+            
+        
+
+        circle_marker_a94504f35368d9858020e369f713b6b4.bindPopup(popup_8ca1462715a2c4d1278d3d8039017c4d)
+        ;
+
+        
+    
+    
+            circle_marker_a94504f35368d9858020e369f713b6b4.bindTooltip(
+                `<div>
+                     Panama - 65.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a2c483235454be66d134e56eb44ee48a = L.circleMarker(
+                [9.965671127464528, -84.17542309600948],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8e246fc9db7b53c0f074511b014a9612 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_caf51fa6042cdbbf3d7ce247ed331c02 = $(`<div id="html_caf51fa6042cdbbf3d7ce247ed331c02" style="width: 100.0%; height: 100.0%;">Costa Rica<br>Planning Value Rate: 80.8%</div>`)[0];
+                popup_8e246fc9db7b53c0f074511b014a9612.setContent(html_caf51fa6042cdbbf3d7ce247ed331c02);
+            
+        
+
+        circle_marker_a2c483235454be66d134e56eb44ee48a.bindPopup(popup_8e246fc9db7b53c0f074511b014a9612)
+        ;
+
+        
+    
+    
+            circle_marker_a2c483235454be66d134e56eb44ee48a.bindTooltip(
+                `<div>
+                     Costa Rica - 80.8%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8262e36518086a6e062b2f48a98faec7 = L.circleMarker(
+                [12.848190428036988, -85.02031850080252],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_15e3eb28767713e099a6261d0dac1929 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c2ff828688f5cb8fd2b4b0c51abd2f6d = $(`<div id="html_c2ff828688f5cb8fd2b4b0c51abd2f6d" style="width: 100.0%; height: 100.0%;">Nicaragua<br>Planning Value Rate: 89.8%</div>`)[0];
+                popup_15e3eb28767713e099a6261d0dac1929.setContent(html_c2ff828688f5cb8fd2b4b0c51abd2f6d);
+            
+        
+
+        circle_marker_8262e36518086a6e062b2f48a98faec7.bindPopup(popup_15e3eb28767713e099a6261d0dac1929)
+        ;
+
+        
+    
+    
+            circle_marker_8262e36518086a6e062b2f48a98faec7.bindTooltip(
+                `<div>
+                     Nicaragua - 89.8%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ded7750549700255fc192e5d74352862 = L.circleMarker(
+                [14.822947081652929, -86.58996383801542],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_7e9c50998bd5ed4ebb62751c2e547597 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1ff61ead18f17a21e83a5db29c31bfb = $(`<div id="html_a1ff61ead18f17a21e83a5db29c31bfb" style="width: 100.0%; height: 100.0%;">Honduras<br>Planning Value Rate: 79.0%</div>`)[0];
+                popup_7e9c50998bd5ed4ebb62751c2e547597.setContent(html_a1ff61ead18f17a21e83a5db29c31bfb);
+            
+        
+
+        circle_marker_ded7750549700255fc192e5d74352862.bindPopup(popup_7e9c50998bd5ed4ebb62751c2e547597)
+        ;
+
+        
+    
+    
+            circle_marker_ded7750549700255fc192e5d74352862.bindTooltip(
+                `<div>
+                     Honduras - 79.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ffbbe3dc5b9f9a95c3217c1e4fbc07c4 = L.circleMarker(
+                [13.726091625794197, -88.87290317032377],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e1c15999aa4ec8410c1807df4b7c1348 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ed5be0afb61e28074ad36b8d8ed0d80 = $(`<div id="html_7ed5be0afb61e28074ad36b8d8ed0d80" style="width: 100.0%; height: 100.0%;">El Salvador<br>Planning Value Rate: 80.0%</div>`)[0];
+                popup_e1c15999aa4ec8410c1807df4b7c1348.setContent(html_7ed5be0afb61e28074ad36b8d8ed0d80);
+            
+        
+
+        circle_marker_ffbbe3dc5b9f9a95c3217c1e4fbc07c4.bindPopup(popup_e1c15999aa4ec8410c1807df4b7c1348)
+        ;
+
+        
+    
+    
+            circle_marker_ffbbe3dc5b9f9a95c3217c1e4fbc07c4.bindTooltip(
+                `<div>
+                     El Salvador - 80.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ab66c06221274a9089dbf9152b4d4d9e = L.circleMarker(
+                [15.699360612026911, -90.36945836053154],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_d1c601bb1577409fc94cf1afa6762016 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8efefc63e876d988b8c21d73388e454a = $(`<div id="html_8efefc63e876d988b8c21d73388e454a" style="width: 100.0%; height: 100.0%;">Guatemala<br>Planning Value Rate: 66.1%</div>`)[0];
+                popup_d1c601bb1577409fc94cf1afa6762016.setContent(html_8efefc63e876d988b8c21d73388e454a);
+            
+        
+
+        circle_marker_ab66c06221274a9089dbf9152b4d4d9e.bindPopup(popup_d1c601bb1577409fc94cf1afa6762016)
+        ;
+
+        
+    
+    
+            circle_marker_ab66c06221274a9089dbf9152b4d4d9e.bindTooltip(
+                `<div>
+                     Guatemala - 66.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_73c1b857df3a8aebdd73b26bed8b8918 = L.circleMarker(
+                [17.197089911451545, -88.70342125299318],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_d184c38702da7b0f6621a47334178dca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79a1d904ec499727f01e201ac6ebd296 = $(`<div id="html_79a1d904ec499727f01e201ac6ebd296" style="width: 100.0%; height: 100.0%;">Belize<br>Planning Value Rate: 64.9%</div>`)[0];
+                popup_d184c38702da7b0f6621a47334178dca.setContent(html_79a1d904ec499727f01e201ac6ebd296);
+            
+        
+
+        circle_marker_73c1b857df3a8aebdd73b26bed8b8918.bindPopup(popup_d184c38702da7b0f6621a47334178dca)
+        ;
+
+        
+    
+    
+            circle_marker_73c1b857df3a8aebdd73b26bed8b8918.bindTooltip(
+                `<div>
+                     Belize - 64.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cdc6659c6c8827cf08b817a6736493ae = L.circleMarker(
+                [4.790225375174759, -58.97120310856251],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_a64dca51cf51165f3845a14dd2231d41 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_546c07511683a03a52f529b7222195ed = $(`<div id="html_546c07511683a03a52f529b7222195ed" style="width: 100.0%; height: 100.0%;">Guyana<br>Planning Value Rate: 46.6%</div>`)[0];
+                popup_a64dca51cf51165f3845a14dd2231d41.setContent(html_546c07511683a03a52f529b7222195ed);
+            
+        
+
+        circle_marker_cdc6659c6c8827cf08b817a6736493ae.bindPopup(popup_a64dca51cf51165f3845a14dd2231d41)
+        ;
+
+        
+    
+    
+            circle_marker_cdc6659c6c8827cf08b817a6736493ae.bindTooltip(
+                `<div>
+                     Guyana - 46.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c97b2921e94ea8a2994d6f742185229e = L.circleMarker(
+                [4.1200080317588865, -55.91145629952073],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_732ccdf23b264a5db51a64facab099c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e8e9624587e059df5c4b3a187c51de76 = $(`<div id="html_e8e9624587e059df5c4b3a187c51de76" style="width: 100.0%; height: 100.0%;">Suriname<br>Planning Value Rate: 57.5%</div>`)[0];
+                popup_732ccdf23b264a5db51a64facab099c3.setContent(html_e8e9624587e059df5c4b3a187c51de76);
+            
+        
+
+        circle_marker_c97b2921e94ea8a2994d6f742185229e.bindPopup(popup_732ccdf23b264a5db51a64facab099c3)
+        ;
+
+        
+    
+    
+            circle_marker_c97b2921e94ea8a2994d6f742185229e.bindTooltip(
+                `<div>
+                     Suriname - 57.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_28889674e93fe18ffc7d68383f4abdd9 = L.circleMarker(
+                [42.46070432663372, -2.8766966992706267],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_033b4cf8710a2cbef5a24f9b1cf60c28 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fdff7395e9bbf940671c68881cd9e430 = $(`<div id="html_fdff7395e9bbf940671c68881cd9e430" style="width: 100.0%; height: 100.0%;">France<br>Planning Value Rate: 95.5%</div>`)[0];
+                popup_033b4cf8710a2cbef5a24f9b1cf60c28.setContent(html_fdff7395e9bbf940671c68881cd9e430);
+            
+        
+
+        circle_marker_28889674e93fe18ffc7d68383f4abdd9.bindPopup(popup_033b4cf8710a2cbef5a24f9b1cf60c28)
+        ;
+
+        
+    
+    
+            circle_marker_28889674e93fe18ffc7d68383f4abdd9.bindTooltip(
+                `<div>
+                     France - 95.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4ee1fd6c0be6147587d3286279f3db42 = L.circleMarker(
+                [-1.4547717055405804, -78.38416674608374],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_89a2d88c90a240144478d49c8d84e725 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_05af72952e303ba8dd2b2c1c639e78e7 = $(`<div id="html_05af72952e303ba8dd2b2c1c639e78e7" style="width: 100.0%; height: 100.0%;">Ecuador<br>Planning Value Rate: 82.5%</div>`)[0];
+                popup_89a2d88c90a240144478d49c8d84e725.setContent(html_05af72952e303ba8dd2b2c1c639e78e7);
+            
+        
+
+        circle_marker_4ee1fd6c0be6147587d3286279f3db42.bindPopup(popup_89a2d88c90a240144478d49c8d84e725)
+        ;
+
+        
+    
+    
+            circle_marker_4ee1fd6c0be6147587d3286279f3db42.bindTooltip(
+                `<div>
+                     Ecuador - 82.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8cde0deac6edbbf71f679bfa3c3342ba = L.circleMarker(
+                [18.137636127868436, -77.32425480164892],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_3fab74a74aa4701b95cbcce4d87838f5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cb4dea4a586c23783144e497ba0b9647 = $(`<div id="html_cb4dea4a586c23783144e497ba0b9647" style="width: 100.0%; height: 100.0%;">Jamaica<br>Planning Value Rate: 82.9%</div>`)[0];
+                popup_3fab74a74aa4701b95cbcce4d87838f5.setContent(html_cb4dea4a586c23783144e497ba0b9647);
+            
+        
+
+        circle_marker_8cde0deac6edbbf71f679bfa3c3342ba.bindPopup(popup_3fab74a74aa4701b95cbcce4d87838f5)
+        ;
+
+        
+    
+    
+            circle_marker_8cde0deac6edbbf71f679bfa3c3342ba.bindTooltip(
+                `<div>
+                     Jamaica - 82.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_110addee43238038397a46b48d7c777b = L.circleMarker(
+                [21.631751541025228, -78.96068490970256],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_461c70098a3fd50b7c051ed60e28f22c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b2dd058d32043b325f61a974b283034f = $(`<div id="html_b2dd058d32043b325f61a974b283034f" style="width: 100.0%; height: 100.0%;">Cuba<br>Planning Value Rate: 86.9%</div>`)[0];
+                popup_461c70098a3fd50b7c051ed60e28f22c.setContent(html_b2dd058d32043b325f61a974b283034f);
+            
+        
+
+        circle_marker_110addee43238038397a46b48d7c777b.bindPopup(popup_461c70098a3fd50b7c051ed60e28f22c)
+        ;
+
+        
+    
+    
+            circle_marker_110addee43238038397a46b48d7c777b.bindTooltip(
+                `<div>
+                     Cuba - 86.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e7f7f8a0027b2bb70147b72620bfa5b6 = L.circleMarker(
+                [-18.906987947858802, 29.788548371892524],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_5190ac89133bc8c21efd9641b7f4cd57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_210aed8b0570425a5a740be5fb035d5c = $(`<div id="html_210aed8b0570425a5a740be5fb035d5c" style="width: 100.0%; height: 100.0%;">Zimbabwe<br>Planning Value Rate: 84.8%</div>`)[0];
+                popup_5190ac89133bc8c21efd9641b7f4cd57.setContent(html_210aed8b0570425a5a740be5fb035d5c);
+            
+        
+
+        circle_marker_e7f7f8a0027b2bb70147b72620bfa5b6.bindPopup(popup_5190ac89133bc8c21efd9641b7f4cd57)
+        ;
+
+        
+    
+    
+            circle_marker_e7f7f8a0027b2bb70147b72620bfa5b6.bindTooltip(
+                `<div>
+                     Zimbabwe - 84.8%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e57fb872a4763308d371b224ca5872b4 = L.circleMarker(
+                [-22.099711378826413, 23.773081465789428],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_6aed44bcff4d37b12819edb06294ad3c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_84820501b7462ba256aaa7a11aa395a1 = $(`<div id="html_84820501b7462ba256aaa7a11aa395a1" style="width: 100.0%; height: 100.0%;">Botswana<br>Planning Value Rate: 82.1%</div>`)[0];
+                popup_6aed44bcff4d37b12819edb06294ad3c.setContent(html_84820501b7462ba256aaa7a11aa395a1);
+            
+        
+
+        circle_marker_e57fb872a4763308d371b224ca5872b4.bindPopup(popup_6aed44bcff4d37b12819edb06294ad3c)
+        ;
+
+        
+    
+    
+            circle_marker_e57fb872a4763308d371b224ca5872b4.bindTooltip(
+                `<div>
+                     Botswana - 82.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0d882d930aab41b2ab3c673d48a828ea = L.circleMarker(
+                [-22.099776931731068, 17.156168126194093],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e0e6ba219321356b912223b746389b75 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d528314d1c09a9b520ae03f421fe65d8 = $(`<div id="html_d528314d1c09a9b520ae03f421fe65d8" style="width: 100.0%; height: 100.0%;">Namibia<br>Planning Value Rate: 80.4%</div>`)[0];
+                popup_e0e6ba219321356b912223b746389b75.setContent(html_d528314d1c09a9b520ae03f421fe65d8);
+            
+        
+
+        circle_marker_0d882d930aab41b2ab3c673d48a828ea.bindPopup(popup_e0e6ba219321356b912223b746389b75)
+        ;
+
+        
+    
+    
+            circle_marker_0d882d930aab41b2ab3c673d48a828ea.bindTooltip(
+                `<div>
+                     Namibia - 80.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_abeb725085c366a805d5dfaf060857f4 = L.circleMarker(
+                [14.354139988452022, -14.50980278585943],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_a0ab67c24d4edc6abd10f130dd01aa89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32a8c4c41b45d9e986faffd46e759f30 = $(`<div id="html_32a8c4c41b45d9e986faffd46e759f30" style="width: 100.0%; height: 100.0%;">Senegal<br>Planning Value Rate: 53.2%</div>`)[0];
+                popup_a0ab67c24d4edc6abd10f130dd01aa89.setContent(html_32a8c4c41b45d9e986faffd46e759f30);
+            
+        
+
+        circle_marker_abeb725085c366a805d5dfaf060857f4.bindPopup(popup_a0ab67c24d4edc6abd10f130dd01aa89)
+        ;
+
+        
+    
+    
+            circle_marker_abeb725085c366a805d5dfaf060857f4.bindTooltip(
+                `<div>
+                     Senegal - 53.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_35b65637caa4c63d5dbc01a029b981e3 = L.circleMarker(
+                [17.267772061700715, -3.543294339453343],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e959460d224bb7a407ea6ba012ff101b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_98d97b531e027ecca32a0190cbba8178 = $(`<div id="html_98d97b531e027ecca32a0190cbba8178" style="width: 100.0%; height: 100.0%;">Mali<br>Planning Value Rate: 41.2%</div>`)[0];
+                popup_e959460d224bb7a407ea6ba012ff101b.setContent(html_98d97b531e027ecca32a0190cbba8178);
+            
+        
+
+        circle_marker_35b65637caa4c63d5dbc01a029b981e3.bindPopup(popup_e959460d224bb7a407ea6ba012ff101b)
+        ;
+
+        
+    
+    
+            circle_marker_35b65637caa4c63d5dbc01a029b981e3.bindTooltip(
+                `<div>
+                     Mali - 41.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_58e7b40c991d6ffe234a02dc25446b05 = L.circleMarker(
+                [20.20926720635376, -10.326396925234992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_61d3703f7ac20c6033b6c3d2352fb519 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb34662dbb3025050bedda489d736724 = $(`<div id="html_eb34662dbb3025050bedda489d736724" style="width: 100.0%; height: 100.0%;">Mauritania<br>Planning Value Rate: 22.4%</div>`)[0];
+                popup_61d3703f7ac20c6033b6c3d2352fb519.setContent(html_eb34662dbb3025050bedda489d736724);
+            
+        
+
+        circle_marker_58e7b40c991d6ffe234a02dc25446b05.bindPopup(popup_61d3703f7ac20c6033b6c3d2352fb519)
+        ;
+
+        
+    
+    
+            circle_marker_58e7b40c991d6ffe234a02dc25446b05.bindTooltip(
+                `<div>
+                     Mauritania - 22.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_63556ad9bd882734d064819e68575cba = L.circleMarker(
+                [9.647430780663699, 2.337377553496156],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_faa54536649f47e61ca0b2befcfb1c29 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16baf3adfbd17ae214f6a785e432c00b = $(`<div id="html_16baf3adfbd17ae214f6a785e432c00b" style="width: 100.0%; height: 100.0%;">Benin<br>Planning Value Rate: 28.0%</div>`)[0];
+                popup_faa54536649f47e61ca0b2befcfb1c29.setContent(html_16baf3adfbd17ae214f6a785e432c00b);
+            
+        
+
+        circle_marker_63556ad9bd882734d064819e68575cba.bindPopup(popup_faa54536649f47e61ca0b2befcfb1c29)
+        ;
+
+        
+    
+    
+            circle_marker_63556ad9bd882734d064819e68575cba.bindTooltip(
+                `<div>
+                     Benin - 28.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7c66ae86f9790cb583843a693323b053 = L.circleMarker(
+                [17.345552814745542, 9.324427099857923],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_9839beaabec08d05b70650f73c31c0b6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ecf8e9563965b343be2daae9a446800b = $(`<div id="html_ecf8e9563965b343be2daae9a446800b" style="width: 100.0%; height: 100.0%;">Niger<br>Planning Value Rate: 36.9%</div>`)[0];
+                popup_9839beaabec08d05b70650f73c31c0b6.setContent(html_ecf8e9563965b343be2daae9a446800b);
+            
+        
+
+        circle_marker_7c66ae86f9790cb583843a693323b053.bindPopup(popup_9839beaabec08d05b70650f73c31c0b6)
+        ;
+
+        
+    
+    
+            circle_marker_7c66ae86f9790cb583843a693323b053.bindTooltip(
+                `<div>
+                     Niger - 36.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_140c4811de1296cc419f0edf6dcf0668 = L.circleMarker(
+                [9.548318418209965, 7.995127754089786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_2173b0041859c769a8dd31aeea7f4d67 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_06d52e28c3626eaa2603cae34cb58ea6 = $(`<div id="html_06d52e28c3626eaa2603cae34cb58ea6" style="width: 100.0%; height: 100.0%;">Nigeria<br>Planning Value Rate: 35.6%</div>`)[0];
+                popup_2173b0041859c769a8dd31aeea7f4d67.setContent(html_06d52e28c3626eaa2603cae34cb58ea6);
+            
+        
+
+        circle_marker_140c4811de1296cc419f0edf6dcf0668.bindPopup(popup_2173b0041859c769a8dd31aeea7f4d67)
+        ;
+
+        
+    
+    
+            circle_marker_140c4811de1296cc419f0edf6dcf0668.bindTooltip(
+                `<div>
+                     Nigeria - 35.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_60aa795485ced3e4b08b69fd0e59b250 = L.circleMarker(
+                [5.663095287992696, 12.611551546501774],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_307f9127fb0cb5d16fd29d013748fa55 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_afe2b89e1a5c61a0e7161cc69d8d6c25 = $(`<div id="html_afe2b89e1a5c61a0e7161cc69d8d6c25" style="width: 100.0%; height: 100.0%;">Cameroon<br>Planning Value Rate: 44.9%</div>`)[0];
+                popup_307f9127fb0cb5d16fd29d013748fa55.setContent(html_afe2b89e1a5c61a0e7161cc69d8d6c25);
+            
+        
+
+        circle_marker_60aa795485ced3e4b08b69fd0e59b250.bindPopup(popup_307f9127fb0cb5d16fd29d013748fa55)
+        ;
+
+        
+    
+    
+            circle_marker_60aa795485ced3e4b08b69fd0e59b250.bindTooltip(
+                `<div>
+                     Cameroon - 44.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_90869daf66bfd2ac61838898806187ef = L.circleMarker(
+                [8.439541954669616, 0.9964039436703582],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8eee5f860a1c9d122bc078092cb02d64 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6440683d9be38979c7e54eb8f5fd4492 = $(`<div id="html_6440683d9be38979c7e54eb8f5fd4492" style="width: 100.0%; height: 100.0%;">Togo<br>Planning Value Rate: 39.6%</div>`)[0];
+                popup_8eee5f860a1c9d122bc078092cb02d64.setContent(html_6440683d9be38979c7e54eb8f5fd4492);
+            
+        
+
+        circle_marker_90869daf66bfd2ac61838898806187ef.bindPopup(popup_8eee5f860a1c9d122bc078092cb02d64)
+        ;
+
+        
+    
+    
+            circle_marker_90869daf66bfd2ac61838898806187ef.bindTooltip(
+                `<div>
+                     Togo - 39.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_af4aa8bf5cea8bb16affb1f2029a8b4a = L.circleMarker(
+                [7.928651813099648, -1.2369685557063992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e84eee686ecf4f6691982c5eda3b9f52 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6fdaa811cad849ca4e6d256fddedc15 = $(`<div id="html_a6fdaa811cad849ca4e6d256fddedc15" style="width: 100.0%; height: 100.0%;">Ghana<br>Planning Value Rate: 40.4%</div>`)[0];
+                popup_e84eee686ecf4f6691982c5eda3b9f52.setContent(html_a6fdaa811cad849ca4e6d256fddedc15);
+            
+        
+
+        circle_marker_af4aa8bf5cea8bb16affb1f2029a8b4a.bindPopup(popup_e84eee686ecf4f6691982c5eda3b9f52)
+        ;
+
+        
+    
+    
+            circle_marker_af4aa8bf5cea8bb16affb1f2029a8b4a.bindTooltip(
+                `<div>
+                     Ghana - 40.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f03bf0133227ae25d0e204e6d50094bb = L.circleMarker(
+                [7.5537550070104915, -5.6120436452252225],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_33bda9c43fbcc60641b0a9b42e28f7e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b63a6ca235503f6f2fa45c0b41993c5b = $(`<div id="html_b63a6ca235503f6f2fa45c0b41993c5b" style="width: 100.0%; height: 100.0%;">Cote d'Ivoire<br>Planning Value Rate: 46.1%</div>`)[0];
+                popup_33bda9c43fbcc60641b0a9b42e28f7e2.setContent(html_b63a6ca235503f6f2fa45c0b41993c5b);
+            
+        
+
+        circle_marker_f03bf0133227ae25d0e204e6d50094bb.bindPopup(popup_33bda9c43fbcc60641b0a9b42e28f7e2)
+        ;
+
+        
+    
+    
+            circle_marker_f03bf0133227ae25d0e204e6d50094bb.bindTooltip(
+                `<div>
+                     Cote d'Ivoire - 46.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b1ff1d72621d74519b1273fd41d711de = L.circleMarker(
+                [10.44827287727134, -11.060853741185456],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_982f96d33d80254a67a5354c87eeb309 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_292cf5e2151467312761e37fdca17939 = $(`<div id="html_292cf5e2151467312761e37fdca17939" style="width: 100.0%; height: 100.0%;">Guinea<br>Planning Value Rate: 37.7%</div>`)[0];
+                popup_982f96d33d80254a67a5354c87eeb309.setContent(html_292cf5e2151467312761e37fdca17939);
+            
+        
+
+        circle_marker_b1ff1d72621d74519b1273fd41d711de.bindPopup(popup_982f96d33d80254a67a5354c87eeb309)
+        ;
+
+        
+    
+    
+            circle_marker_b1ff1d72621d74519b1273fd41d711de.bindTooltip(
+                `<div>
+                     Guinea - 37.7%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d2679630b0fba91d85a873adc6630dc3 = L.circleMarker(
+                [12.022704382325685, -15.110623751667879],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_470b609fec03ece7cf6735c38bd8e6cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_40657a1f3f45f4721301a1de3ce03b44 = $(`<div id="html_40657a1f3f45f4721301a1de3ce03b44" style="width: 100.0%; height: 100.0%;">Guinea-Bissau<br>Planning Value Rate: 60.0%</div>`)[0];
+                popup_470b609fec03ece7cf6735c38bd8e6cc.setContent(html_40657a1f3f45f4721301a1de3ce03b44);
+            
+        
+
+        circle_marker_d2679630b0fba91d85a873adc6630dc3.bindPopup(popup_470b609fec03ece7cf6735c38bd8e6cc)
+        ;
+
+        
+    
+    
+            circle_marker_d2679630b0fba91d85a873adc6630dc3.bindTooltip(
+                `<div>
+                     Guinea-Bissau - 60.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bc3df80c1fbc8fea1325acaaea2c7444 = L.circleMarker(
+                [6.431619862252993, -9.410836154371117],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_f8becf439339759984f8b488ea9dc316 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d0698fed4d1d60f877b29fced763263 = $(`<div id="html_8d0698fed4d1d60f877b29fced763263" style="width: 100.0%; height: 100.0%;">Liberia<br>Planning Value Rate: 47.5%</div>`)[0];
+                popup_f8becf439339759984f8b488ea9dc316.setContent(html_8d0698fed4d1d60f877b29fced763263);
+            
+        
+
+        circle_marker_bc3df80c1fbc8fea1325acaaea2c7444.bindPopup(popup_f8becf439339759984f8b488ea9dc316)
+        ;
+
+        
+    
+    
+            circle_marker_bc3df80c1fbc8fea1325acaaea2c7444.bindTooltip(
+                `<div>
+                     Liberia - 47.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_67cde9ef8105c10ca3ca46d6b2c38b5a = L.circleMarker(
+                [8.53035372615305, -11.795257428559948],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_b1beaf161120a081cb6b38b1546e3c7a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8aa192a646c8d0f4b12cd0c69ab21018 = $(`<div id="html_8aa192a646c8d0f4b12cd0c69ab21018" style="width: 100.0%; height: 100.0%;">Sierra Leone<br>Planning Value Rate: 53.0%</div>`)[0];
+                popup_b1beaf161120a081cb6b38b1546e3c7a.setContent(html_8aa192a646c8d0f4b12cd0c69ab21018);
+            
+        
+
+        circle_marker_67cde9ef8105c10ca3ca46d6b2c38b5a.bindPopup(popup_b1beaf161120a081cb6b38b1546e3c7a)
+        ;
+
+        
+    
+    
+            circle_marker_67cde9ef8105c10ca3ca46d6b2c38b5a.bindTooltip(
+                `<div>
+                     Sierra Leone - 53.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_55d063133a814bef35463dc00d3ff448 = L.circleMarker(
+                [12.311650494136712, -1.77653745205594],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8a08409fe88916174b6f8aa8eb432856 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2c51679576249825d244c6c234339107 = $(`<div id="html_2c51679576249825d244c6c234339107" style="width: 100.0%; height: 100.0%;">Burkina Faso<br>Planning Value Rate: 58.2%</div>`)[0];
+                popup_8a08409fe88916174b6f8aa8eb432856.setContent(html_2c51679576249825d244c6c234339107);
+            
+        
+
+        circle_marker_55d063133a814bef35463dc00d3ff448.bindPopup(popup_8a08409fe88916174b6f8aa8eb432856)
+        ;
+
+        
+    
+    
+            circle_marker_55d063133a814bef35463dc00d3ff448.bindTooltip(
+                `<div>
+                     Burkina Faso - 58.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_44052a56ce35e67964332abde81bd9b7 = L.circleMarker(
+                [6.5427787059213145, 20.374347291243915],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_a4e4f597119305217d4a3509e01f78f0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4abb188f6f6c022f12d487f073eefabd = $(`<div id="html_4abb188f6f6c022f12d487f073eefabd" style="width: 100.0%; height: 100.0%;">Central African Republic<br>Planning Value Rate: 27.6%</div>`)[0];
+                popup_a4e4f597119305217d4a3509e01f78f0.setContent(html_4abb188f6f6c022f12d487f073eefabd);
+            
+        
+
+        circle_marker_44052a56ce35e67964332abde81bd9b7.bindPopup(popup_a4e4f597119305217d4a3509e01f78f0)
+        ;
+
+        
+    
+    
+            circle_marker_44052a56ce35e67964332abde81bd9b7.bindTooltip(
+                `<div>
+                     Central African Republic - 27.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c95adf467c2f68860f99699c47a6d462 = L.circleMarker(
+                [-0.8378010872252886, 15.13446176741353],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_b2374c98033035261d9441f1ea63961c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7d1ca0a0091c9c2b4c7bdb41481a555f = $(`<div id="html_7d1ca0a0091c9c2b4c7bdb41481a555f" style="width: 100.0%; height: 100.0%;">Congo<br>Planning Value Rate: 43.2%</div>`)[0];
+                popup_b2374c98033035261d9441f1ea63961c.setContent(html_7d1ca0a0091c9c2b4c7bdb41481a555f);
+            
+        
+
+        circle_marker_c95adf467c2f68860f99699c47a6d462.bindPopup(popup_b2374c98033035261d9441f1ea63961c)
+        ;
+
+        
+    
+    
+            circle_marker_c95adf467c2f68860f99699c47a6d462.bindTooltip(
+                `<div>
+                     Congo - 43.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1a07f5219d69de4acde5c7d4e5bdaf73 = L.circleMarker(
+                [-0.6470481398040288, 11.687751174902044],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_93eaa4e1960335a1dda6d1d371adb708 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4aac199702150966b7d04608b9cff5b7 = $(`<div id="html_4aac199702150966b7d04608b9cff5b7" style="width: 100.0%; height: 100.0%;">Gabon<br>Planning Value Rate: 44.0%</div>`)[0];
+                popup_93eaa4e1960335a1dda6d1d371adb708.setContent(html_4aac199702150966b7d04608b9cff5b7);
+            
+        
+
+        circle_marker_1a07f5219d69de4acde5c7d4e5bdaf73.bindPopup(popup_93eaa4e1960335a1dda6d1d371adb708)
+        ;
+
+        
+    
+    
+            circle_marker_1a07f5219d69de4acde5c7d4e5bdaf73.bindTooltip(
+                `<div>
+                     Gabon - 44.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ee09b9bb4e0bb7b45aaef5e6d258105c = L.circleMarker(
+                [1.6458643199600753, 10.366031325064027],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_2d317fd0884920bb09f5de4547dc23e5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69bcee00a02e056afebc6289a5c984e2 = $(`<div id="html_69bcee00a02e056afebc6289a5c984e2" style="width: 100.0%; height: 100.0%;">Equatorial Guinea<br>Planning Value Rate: 20.5%</div>`)[0];
+                popup_2d317fd0884920bb09f5de4547dc23e5.setContent(html_69bcee00a02e056afebc6289a5c984e2);
+            
+        
+
+        circle_marker_ee09b9bb4e0bb7b45aaef5e6d258105c.bindPopup(popup_2d317fd0884920bb09f5de4547dc23e5)
+        ;
+
+        
+    
+    
+            circle_marker_ee09b9bb4e0bb7b45aaef5e6d258105c.bindTooltip(
+                `<div>
+                     Equatorial Guinea - 20.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6f28c20b2e4b969a30ebb8bc1e692ef3 = L.circleMarker(
+                [-13.395067553524187, 27.727591918760577],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_5c821f8ef97656cf5db5c94e5599d413 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0763d3fffe67093608c4b9ece2bbced7 = $(`<div id="html_0763d3fffe67093608c4b9ece2bbced7" style="width: 100.0%; height: 100.0%;">Zambia<br>Planning Value Rate: 65.9%</div>`)[0];
+                popup_5c821f8ef97656cf5db5c94e5599d413.setContent(html_0763d3fffe67093608c4b9ece2bbced7);
+            
+        
+
+        circle_marker_6f28c20b2e4b969a30ebb8bc1e692ef3.bindPopup(popup_5c821f8ef97656cf5db5c94e5599d413)
+        ;
+
+        
+    
+    
+            circle_marker_6f28c20b2e4b969a30ebb8bc1e692ef3.bindTooltip(
+                `<div>
+                     Zambia - 65.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_46ccdc285b1d9221727dbd665e1e2a38 = L.circleMarker(
+                [-13.172834992341919, 34.193605326922366],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_4a98e5030c9c4f2accba1cc3113c7a80 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5f19925c16ce60a642ca9872f472123a = $(`<div id="html_5f19925c16ce60a642ca9872f472123a" style="width: 100.0%; height: 100.0%;">Malawi<br>Planning Value Rate: 77.3%</div>`)[0];
+                popup_4a98e5030c9c4f2accba1cc3113c7a80.setContent(html_5f19925c16ce60a642ca9872f472123a);
+            
+        
+
+        circle_marker_46ccdc285b1d9221727dbd665e1e2a38.bindPopup(popup_4a98e5030c9c4f2accba1cc3113c7a80)
+        ;
+
+        
+    
+    
+            circle_marker_46ccdc285b1d9221727dbd665e1e2a38.bindTooltip(
+                `<div>
+                     Malawi - 77.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4a20c52b2f93fc3056cd241c4101a9e7 = L.circleMarker(
+                [-17.230448975659677, 35.47261597864435],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_6aa6f03d58bb1d0c8f538fd4d7a5f8ab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_20a31ffe34ef5747225837754561b545 = $(`<div id="html_20a31ffe34ef5747225837754561b545" style="width: 100.0%; height: 100.0%;">Mozambique<br>Planning Value Rate: 55.5%</div>`)[0];
+                popup_6aa6f03d58bb1d0c8f538fd4d7a5f8ab.setContent(html_20a31ffe34ef5747225837754561b545);
+            
+        
+
+        circle_marker_4a20c52b2f93fc3056cd241c4101a9e7.bindPopup(popup_6aa6f03d58bb1d0c8f538fd4d7a5f8ab)
+        ;
+
+        
+    
+    
+            circle_marker_4a20c52b2f93fc3056cd241c4101a9e7.bindTooltip(
+                `<div>
+                     Mozambique - 55.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3d1ff8cf915bd41115fb076059c269ea = L.circleMarker(
+                [-26.48985528852001, 31.39525590206532],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_7eec415ba14581b88bd81cb621986d06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a287affc3e28f899b07658b6a3bf900b = $(`<div id="html_a287affc3e28f899b07658b6a3bf900b" style="width: 100.0%; height: 100.0%;">Eswatini<br>Planning Value Rate: 82.9%</div>`)[0];
+                popup_7eec415ba14581b88bd81cb621986d06.setContent(html_a287affc3e28f899b07658b6a3bf900b);
+            
+        
+
+        circle_marker_3d1ff8cf915bd41115fb076059c269ea.bindPopup(popup_7eec415ba14581b88bd81cb621986d06)
+        ;
+
+        
+    
+    
+            circle_marker_3d1ff8cf915bd41115fb076059c269ea.bindTooltip(
+                `<div>
+                     Eswatini - 82.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1d5edafc03f3369999d12397700b5262 = L.circleMarker(
+                [-12.245869036133188, 17.47057255231345],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_d9bef21be1c5e86eeba4b6bbf3e5edf6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56b3691dfe7f15e7d9087598137c10cc = $(`<div id="html_56b3691dfe7f15e7d9087598137c10cc" style="width: 100.0%; height: 100.0%;">Angola<br>Planning Value Rate: 29.8%</div>`)[0];
+                popup_d9bef21be1c5e86eeba4b6bbf3e5edf6.setContent(html_56b3691dfe7f15e7d9087598137c10cc);
+            
+        
+
+        circle_marker_1d5edafc03f3369999d12397700b5262.bindPopup(popup_d9bef21be1c5e86eeba4b6bbf3e5edf6)
+        ;
+
+        
+    
+    
+            circle_marker_1d5edafc03f3369999d12397700b5262.bindTooltip(
+                `<div>
+                     Angola - 29.8%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_345ccd19128d51f99fc9935c00857fed = L.circleMarker(
+                [-3.3773910753554657, 29.91389229542573],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_9d974953399bd9788ff29f6c31a66a24 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_891c6e0ef3fffe3e69a936dba90869af = $(`<div id="html_891c6e0ef3fffe3e69a936dba90869af" style="width: 100.0%; height: 100.0%;">Burundi<br>Planning Value Rate: 39.6%</div>`)[0];
+                popup_9d974953399bd9788ff29f6c31a66a24.setContent(html_891c6e0ef3fffe3e69a936dba90869af);
+            
+        
+
+        circle_marker_345ccd19128d51f99fc9935c00857fed.bindPopup(popup_9d974953399bd9788ff29f6c31a66a24)
+        ;
+
+        
+    
+    
+            circle_marker_345ccd19128d51f99fc9935c00857fed.bindTooltip(
+                `<div>
+                     Burundi - 39.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_95970ada259d12eec683e3ff90c9b87c = L.circleMarker(
+                [-19.356114077828778, 46.69117091471639],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_aa9babaed211535805bd3ef98f503465 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_75cf8270770a2ce4529d8a33a2da0b5a = $(`<div id="html_75cf8270770a2ce4529d8a33a2da0b5a" style="width: 100.0%; height: 100.0%;">Madagascar<br>Planning Value Rate: 65.6%</div>`)[0];
+                popup_aa9babaed211535805bd3ef98f503465.setContent(html_75cf8270770a2ce4529d8a33a2da0b5a);
+            
+        
+
+        circle_marker_95970ada259d12eec683e3ff90c9b87c.bindPopup(popup_aa9babaed211535805bd3ef98f503465)
+        ;
+
+        
+    
+    
+            circle_marker_95970ada259d12eec683e3ff90c9b87c.bindTooltip(
+                `<div>
+                     Madagascar - 65.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_999021a19dcd206fe3ef575d3cf44d59 = L.circleMarker(
+                [31.94113662241515, 35.27331962289024],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_9a6a5305e8fc06fa9ff76d0a332b3a92 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f6c6d0754f20328f218e225f83a95540 = $(`<div id="html_f6c6d0754f20328f218e225f83a95540" style="width: 100.0%; height: 100.0%;">occupied Palestinian territory, including east Jerusalem<br>Planning Value Rate: 61.0%</div>`)[0];
+                popup_9a6a5305e8fc06fa9ff76d0a332b3a92.setContent(html_f6c6d0754f20328f218e225f83a95540);
+            
+        
+
+        circle_marker_999021a19dcd206fe3ef575d3cf44d59.bindPopup(popup_9a6a5305e8fc06fa9ff76d0a332b3a92)
+        ;
+
+        
+    
+    
+            circle_marker_999021a19dcd206fe3ef575d3cf44d59.bindTooltip(
+                `<div>
+                     occupied Palestinian territory, including east Jerusalem - 61.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c2dacf3825be115ee7de1bf3439bdea9 = L.circleMarker(
+                [13.47533435870166, -15.431872807730837],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_b5ad46519fd28048d75d944028bf8e64 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a10a6d4597eeef21310bb71561c4f65e = $(`<div id="html_a10a6d4597eeef21310bb71561c4f65e" style="width: 100.0%; height: 100.0%;">Gambia<br>Planning Value Rate: 41.1%</div>`)[0];
+                popup_b5ad46519fd28048d75d944028bf8e64.setContent(html_a10a6d4597eeef21310bb71561c4f65e);
+            
+        
+
+        circle_marker_c2dacf3825be115ee7de1bf3439bdea9.bindPopup(popup_b5ad46519fd28048d75d944028bf8e64)
+        ;
+
+        
+    
+    
+            circle_marker_c2dacf3825be115ee7de1bf3439bdea9.bindTooltip(
+                `<div>
+                     Gambia - 41.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e809d1311963c60142b1c10f0a4692ed = L.circleMarker(
+                [34.172939036882376, 9.534716120695835],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_001b56205309a15c91fe33922863c0bd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_00e8331840914bc72126bdc3340d9b55 = $(`<div id="html_00e8331840914bc72126bdc3340d9b55" style="width: 100.0%; height: 100.0%;">Tunisia<br>Planning Value Rate: 62.7%</div>`)[0];
+                popup_001b56205309a15c91fe33922863c0bd.setContent(html_00e8331840914bc72126bdc3340d9b55);
+            
+        
+
+        circle_marker_e809d1311963c60142b1c10f0a4692ed.bindPopup(popup_001b56205309a15c91fe33922863c0bd)
+        ;
+
+        
+    
+    
+            circle_marker_e809d1311963c60142b1c10f0a4692ed.bindTooltip(
+                `<div>
+                     Tunisia - 62.7%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e8ef81c6b12a1e6982b40e821d7d6374 = L.circleMarker(
+                [28.185481278657537, 2.5980477916183444],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_d28b8411d002ef4a181332dabd2ec92e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6e68b673ab52d6a502152b46eb9ec4af = $(`<div id="html_6e68b673ab52d6a502152b46eb9ec4af" style="width: 100.0%; height: 100.0%;">Algeria<br>Planning Value Rate: 66.3%</div>`)[0];
+                popup_d28b8411d002ef4a181332dabd2ec92e.setContent(html_6e68b673ab52d6a502152b46eb9ec4af);
+            
+        
+
+        circle_marker_e8ef81c6b12a1e6982b40e821d7d6374.bindPopup(popup_d28b8411d002ef4a181332dabd2ec92e)
+        ;
+
+        
+    
+    
+            circle_marker_e8ef81c6b12a1e6982b40e821d7d6374.bindTooltip(
+                `<div>
+                     Algeria - 66.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_88b9b8195aa378c3e2293dc4027caabc = L.circleMarker(
+                [31.245490584748417, 36.77945490632519],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_40a1e6b64bd69184f993ef8ef642f096 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4bc4eaf23a7f116b35c1a2198d1a82db = $(`<div id="html_4bc4eaf23a7f116b35c1a2198d1a82db" style="width: 100.0%; height: 100.0%;">Jordan<br>Planning Value Rate: 56.7%</div>`)[0];
+                popup_40a1e6b64bd69184f993ef8ef642f096.setContent(html_4bc4eaf23a7f116b35c1a2198d1a82db);
+            
+        
+
+        circle_marker_88b9b8195aa378c3e2293dc4027caabc.bindPopup(popup_40a1e6b64bd69184f993ef8ef642f096)
+        ;
+
+        
+    
+    
+            circle_marker_88b9b8195aa378c3e2293dc4027caabc.bindTooltip(
+                `<div>
+                     Jordan - 56.7%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fb69a0b277c8620a5290789d5773504d = L.circleMarker(
+                [25.32185097420669, 51.1835025789133],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_71dc4131592aee49b736adb84d7fe4e4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_037ea79476391aaaca0df45929dc08ce = $(`<div id="html_037ea79476391aaaca0df45929dc08ce" style="width: 100.0%; height: 100.0%;">Qatar<br>Planning Value Rate: 68.9%</div>`)[0];
+                popup_71dc4131592aee49b736adb84d7fe4e4.setContent(html_037ea79476391aaaca0df45929dc08ce);
+            
+        
+
+        circle_marker_fb69a0b277c8620a5290789d5773504d.bindPopup(popup_71dc4131592aee49b736adb84d7fe4e4)
+        ;
+
+        
+    
+    
+            circle_marker_fb69a0b277c8620a5290789d5773504d.bindTooltip(
+                `<div>
+                     Qatar - 68.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0ce9c2b0455b641cac3f577a02f9a9d9 = L.circleMarker(
+                [33.03682096372491, 43.75691096461423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_88bfb7b99b18cae26a4aa80cdfa67843 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_943dbef3507971007991465ad0c2ff55 = $(`<div id="html_943dbef3507971007991465ad0c2ff55" style="width: 100.0%; height: 100.0%;">Iraq<br>Planning Value Rate: 53.8%</div>`)[0];
+                popup_88bfb7b99b18cae26a4aa80cdfa67843.setContent(html_943dbef3507971007991465ad0c2ff55);
+            
+        
+
+        circle_marker_0ce9c2b0455b641cac3f577a02f9a9d9.bindPopup(popup_88bfb7b99b18cae26a4aa80cdfa67843)
+        ;
+
+        
+    
+    
+            circle_marker_0ce9c2b0455b641cac3f577a02f9a9d9.bindTooltip(
+                `<div>
+                     Iraq - 53.8%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b9b08412b35fa6308e2a376926bc2339 = L.circleMarker(
+                [20.611174374229545, 56.09867281997542],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_48153e214f72f70fc2e5628a959d45f7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f978a395ac789e8dfcfef26bcb33b8db = $(`<div id="html_f978a395ac789e8dfcfef26bcb33b8db" style="width: 100.0%; height: 100.0%;">Oman<br>Planning Value Rate: 39.6%</div>`)[0];
+                popup_48153e214f72f70fc2e5628a959d45f7.setContent(html_f978a395ac789e8dfcfef26bcb33b8db);
+            
+        
+
+        circle_marker_b9b08412b35fa6308e2a376926bc2339.bindPopup(popup_48153e214f72f70fc2e5628a959d45f7)
+        ;
+
+        
+    
+    
+            circle_marker_b9b08412b35fa6308e2a376926bc2339.bindTooltip(
+                `<div>
+                     Oman - 39.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b6b36c03c93f911f76ac38e35afb486 = L.circleMarker(
+                [-15.542677057554924, 167.07375126822674],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_0e3f464f1f57395d8d74ce575b8e4419 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c7747d6e4519653874a24a06c684540 = $(`<div id="html_4c7747d6e4519653874a24a06c684540" style="width: 100.0%; height: 100.0%;">Vanuatu<br>Planning Value Rate: 50.7%</div>`)[0];
+                popup_0e3f464f1f57395d8d74ce575b8e4419.setContent(html_4c7747d6e4519653874a24a06c684540);
+            
+        
+
+        circle_marker_1b6b36c03c93f911f76ac38e35afb486.bindPopup(popup_0e3f464f1f57395d8d74ce575b8e4419)
+        ;
+
+        
+    
+    
+            circle_marker_1b6b36c03c93f911f76ac38e35afb486.bindTooltip(
+                `<div>
+                     Vanuatu - 50.7%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_154151cec219199eeb7cc96c4ebad963 = L.circleMarker(
+                [12.684728629393506, 104.87608532525192],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_12af25a15b4608aaae1bb91648210901 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bfe609a813d586dd357bdf5d4024ab71 = $(`<div id="html_bfe609a813d586dd357bdf5d4024ab71" style="width: 100.0%; height: 100.0%;">Cambodia<br>Planning Value Rate: 56.5%</div>`)[0];
+                popup_12af25a15b4608aaae1bb91648210901.setContent(html_bfe609a813d586dd357bdf5d4024ab71);
+            
+        
+
+        circle_marker_154151cec219199eeb7cc96c4ebad963.bindPopup(popup_12af25a15b4608aaae1bb91648210901)
+        ;
+
+        
+    
+    
+            circle_marker_154151cec219199eeb7cc96c4ebad963.bindTooltip(
+                `<div>
+                     Cambodia - 56.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a51e4c9ce32834e27cb5334f77e0ebb2 = L.circleMarker(
+                [15.01697499141648, 101.00613354626108],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_b91429ee80768d4c42789a10136d0cc6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_11d04c8103f4d437821ab325434542ac = $(`<div id="html_11d04c8103f4d437821ab325434542ac" style="width: 100.0%; height: 100.0%;">Thailand<br>Planning Value Rate: 88.2%</div>`)[0];
+                popup_b91429ee80768d4c42789a10136d0cc6.setContent(html_11d04c8103f4d437821ab325434542ac);
+            
+        
+
+        circle_marker_a51e4c9ce32834e27cb5334f77e0ebb2.bindPopup(popup_b91429ee80768d4c42789a10136d0cc6)
+        ;
+
+        
+    
+    
+            circle_marker_a51e4c9ce32834e27cb5334f77e0ebb2.bindTooltip(
+                `<div>
+                     Thailand - 88.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ad799fe72de80c08b7e94dddc81f8498 = L.circleMarker(
+                [18.444978089036088, 103.75025989504465],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_5ec8ffdddf03a49e5e19059de19a3dff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a548ca17e0d1e8cf4a5f41e2446ce23a = $(`<div id="html_a548ca17e0d1e8cf4a5f41e2446ce23a" style="width: 100.0%; height: 100.0%;">Lao People's Democratic Republic<br>Planning Value Rate: 72.3%</div>`)[0];
+                popup_5ec8ffdddf03a49e5e19059de19a3dff.setContent(html_a548ca17e0d1e8cf4a5f41e2446ce23a);
+            
+        
+
+        circle_marker_ad799fe72de80c08b7e94dddc81f8498.bindPopup(popup_5ec8ffdddf03a49e5e19059de19a3dff)
+        ;
+
+        
+    
+    
+            circle_marker_ad799fe72de80c08b7e94dddc81f8498.bindTooltip(
+                `<div>
+                     Lao People's Democratic Republic - 72.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a051f22f1bdfbafb73a3777078474ac0 = L.circleMarker(
+                [21.016999873773827, 96.50584094206161],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8408f3bea55e083324b717e20b492ce3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e70b0725e8c38f6296a3280fd2b5ad75 = $(`<div id="html_e70b0725e8c38f6296a3280fd2b5ad75" style="width: 100.0%; height: 100.0%;">Myanmar<br>Planning Value Rate: 74.9%</div>`)[0];
+                popup_8408f3bea55e083324b717e20b492ce3.setContent(html_e70b0725e8c38f6296a3280fd2b5ad75);
+            
+        
+
+        circle_marker_a051f22f1bdfbafb73a3777078474ac0.bindPopup(popup_8408f3bea55e083324b717e20b492ce3)
+        ;
+
+        
+    
+    
+            circle_marker_a051f22f1bdfbafb73a3777078474ac0.bindTooltip(
+                `<div>
+                     Myanmar - 74.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_94abb195088510588777e9103eb51d87 = L.circleMarker(
+                [16.657937753254938, 106.28584079705195],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_679a51eb06b126e92187d7365281ad44 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d45833d716b718195fb097ba9dc8952 = $(`<div id="html_1d45833d716b718195fb097ba9dc8952" style="width: 100.0%; height: 100.0%;">Viet Nam<br>Planning Value Rate: 72.1%</div>`)[0];
+                popup_679a51eb06b126e92187d7365281ad44.setContent(html_1d45833d716b718195fb097ba9dc8952);
+            
+        
+
+        circle_marker_94abb195088510588777e9103eb51d87.bindPopup(popup_679a51eb06b126e92187d7365281ad44)
+        ;
+
+        
+    
+    
+            circle_marker_94abb195088510588777e9103eb51d87.bindTooltip(
+                `<div>
+                     Viet Nam - 72.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2de93b8315ddb54489518818ad850415 = L.circleMarker(
+                [40.14302033650109, 127.16501590888976],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_422c6b12a7140855dd59ea3ebce26da4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ce1f9ed16087f37232e18d8213a8792 = $(`<div id="html_7ce1f9ed16087f37232e18d8213a8792" style="width: 100.0%; height: 100.0%;">Democratic People's Republic of Korea<br>Planning Value Rate: 89.6%</div>`)[0];
+                popup_422c6b12a7140855dd59ea3ebce26da4.setContent(html_7ce1f9ed16087f37232e18d8213a8792);
+            
+        
+
+        circle_marker_2de93b8315ddb54489518818ad850415.bindPopup(popup_422c6b12a7140855dd59ea3ebce26da4)
+        ;
+
+        
+    
+    
+            circle_marker_2de93b8315ddb54489518818ad850415.bindTooltip(
+                `<div>
+                     Democratic People's Republic of Korea - 89.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d6b0f5443170d9b642ba523723db3a21 = L.circleMarker(
+                [46.82368112626357, 102.94640620846634],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_0a4ee3be9e0b5deac683c0fc77df7f5f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_344f037566bb6fb4a90d19482a211b82 = $(`<div id="html_344f037566bb6fb4a90d19482a211b82" style="width: 100.0%; height: 100.0%;">Mongolia<br>Planning Value Rate: 63.6%</div>`)[0];
+                popup_0a4ee3be9e0b5deac683c0fc77df7f5f.setContent(html_344f037566bb6fb4a90d19482a211b82);
+            
+        
+
+        circle_marker_d6b0f5443170d9b642ba523723db3a21.bindPopup(popup_0a4ee3be9e0b5deac683c0fc77df7f5f)
+        ;
+
+        
+    
+    
+            circle_marker_d6b0f5443170d9b642ba523723db3a21.bindTooltip(
+                `<div>
+                     Mongolia - 63.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f21cac4ade2a5540a481ed6b477b4899 = L.circleMarker(
+                [22.92500640740852, 79.59370376325381],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e7dd43c677849a4d627ca41e3863b0e7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_788ab439ba806d87632522d6a214d16d = $(`<div id="html_788ab439ba806d87632522d6a214d16d" style="width: 100.0%; height: 100.0%;">India<br>Planning Value Rate: 72.8%</div>`)[0];
+                popup_e7dd43c677849a4d627ca41e3863b0e7.setContent(html_788ab439ba806d87632522d6a214d16d);
+            
+        
+
+        circle_marker_f21cac4ade2a5540a481ed6b477b4899.bindPopup(popup_e7dd43c677849a4d627ca41e3863b0e7)
+        ;
+
+        
+    
+    
+            circle_marker_f21cac4ade2a5540a481ed6b477b4899.bindTooltip(
+                `<div>
+                     India - 72.8%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5e15bec29b4c086b094ca43a203aa848 = L.circleMarker(
+                [23.83946179534406, 90.26792827719598],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_326f8d8bf2239e44d63f0e19db0e82ec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a94508c6ed6e0ae0f78844f0befcff3f = $(`<div id="html_a94508c6ed6e0ae0f78844f0befcff3f" style="width: 100.0%; height: 100.0%;">Bangladesh<br>Planning Value Rate: 77.4%</div>`)[0];
+                popup_326f8d8bf2239e44d63f0e19db0e82ec.setContent(html_a94508c6ed6e0ae0f78844f0befcff3f);
+            
+        
+
+        circle_marker_5e15bec29b4c086b094ca43a203aa848.bindPopup(popup_326f8d8bf2239e44d63f0e19db0e82ec)
+        ;
+
+        
+    
+    
+            circle_marker_5e15bec29b4c086b094ca43a203aa848.bindTooltip(
+                `<div>
+                     Bangladesh - 77.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cceaf4c79483ac2f7fda59384e4a4fc5 = L.circleMarker(
+                [27.427968649102027, 90.4724248062037],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8077262aa989b72889c699e6d4622c3b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_77ffefec151d185353459c5f6bd4f89e = $(`<div id="html_77ffefec151d185353459c5f6bd4f89e" style="width: 100.0%; height: 100.0%;">Bhutan<br>Planning Value Rate: 84.6%</div>`)[0];
+                popup_8077262aa989b72889c699e6d4622c3b.setContent(html_77ffefec151d185353459c5f6bd4f89e);
+            
+        
+
+        circle_marker_cceaf4c79483ac2f7fda59384e4a4fc5.bindPopup(popup_8077262aa989b72889c699e6d4622c3b)
+        ;
+
+        
+    
+    
+            circle_marker_cceaf4c79483ac2f7fda59384e4a4fc5.bindTooltip(
+                `<div>
+                     Bhutan - 84.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4432fc9b505d49b1fa9660960769ec30 = L.circleMarker(
+                [28.23944001904935, 84.01317367692529],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_604a001a6ab310a6194b1c8ddc42f4ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_924d16428a31d8f1cc55e428d9d581bb = $(`<div id="html_924d16428a31d8f1cc55e428d9d581bb" style="width: 100.0%; height: 100.0%;">Nepal<br>Planning Value Rate: 61.9%</div>`)[0];
+                popup_604a001a6ab310a6194b1c8ddc42f4ed.setContent(html_924d16428a31d8f1cc55e428d9d581bb);
+            
+        
+
+        circle_marker_4432fc9b505d49b1fa9660960769ec30.bindPopup(popup_604a001a6ab310a6194b1c8ddc42f4ed)
+        ;
+
+        
+    
+    
+            circle_marker_4432fc9b505d49b1fa9660960769ec30.bindTooltip(
+                `<div>
+                     Nepal - 61.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_51f74636ba090d4862d7cc9049993318 = L.circleMarker(
+                [29.973460025547393, 69.41399806318127],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_cc133f7e27190ef0b4ecdf18b286ce69 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_33001dabe0bb6527e4b97d1e540eccf8 = $(`<div id="html_33001dabe0bb6527e4b97d1e540eccf8" style="width: 100.0%; height: 100.0%;">Pakistan<br>Planning Value Rate: 48.5%</div>`)[0];
+                popup_cc133f7e27190ef0b4ecdf18b286ce69.setContent(html_33001dabe0bb6527e4b97d1e540eccf8);
+            
+        
+
+        circle_marker_51f74636ba090d4862d7cc9049993318.bindPopup(popup_cc133f7e27190ef0b4ecdf18b286ce69)
+        ;
+
+        
+    
+    
+            circle_marker_51f74636ba090d4862d7cc9049993318.bindTooltip(
+                `<div>
+                     Pakistan - 48.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4571a67427ed039b4ec515d0f8121ea6 = L.circleMarker(
+                [33.85639928169076, 66.08669022192831],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_d3acaa54bf67eef97fef3e7a3280124b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5df6b75f9eec0c8a64d1a2301bf59dd4 = $(`<div id="html_5df6b75f9eec0c8a64d1a2301bf59dd4" style="width: 100.0%; height: 100.0%;">Afghanistan<br>Planning Value Rate: 42.1%</div>`)[0];
+                popup_d3acaa54bf67eef97fef3e7a3280124b.setContent(html_5df6b75f9eec0c8a64d1a2301bf59dd4);
+            
+        
+
+        circle_marker_4571a67427ed039b4ec515d0f8121ea6.bindPopup(popup_d3acaa54bf67eef97fef3e7a3280124b)
+        ;
+
+        
+    
+    
+            circle_marker_4571a67427ed039b4ec515d0f8121ea6.bindTooltip(
+                `<div>
+                     Afghanistan - 42.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4a29f952312d2bcd2053978f3138df82 = L.circleMarker(
+                [38.58308146421082, 71.03443504896113],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_02a47d15ffcfd7566047e23bc684c4e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_224a2a8aec009a934a32dac30d921191 = $(`<div id="html_224a2a8aec009a934a32dac30d921191" style="width: 100.0%; height: 100.0%;">Tajikistan<br>Planning Value Rate: 52.1%</div>`)[0];
+                popup_02a47d15ffcfd7566047e23bc684c4e2.setContent(html_224a2a8aec009a934a32dac30d921191);
+            
+        
+
+        circle_marker_4a29f952312d2bcd2053978f3138df82.bindPopup(popup_02a47d15ffcfd7566047e23bc684c4e2)
+        ;
+
+        
+    
+    
+            circle_marker_4a29f952312d2bcd2053978f3138df82.bindTooltip(
+                `<div>
+                     Tajikistan - 52.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fd001a75d5d24ebdf965f8ee0f08e918 = L.circleMarker(
+                [41.50689371318262, 74.62040481092558],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_962066a70a468ce3973a5c39d7a70397 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd3da16a428d692c63a65e8d31a9b837 = $(`<div id="html_bd3da16a428d692c63a65e8d31a9b837" style="width: 100.0%; height: 100.0%;">Kyrgyzstan<br>Planning Value Rate: 64.6%</div>`)[0];
+                popup_962066a70a468ce3973a5c39d7a70397.setContent(html_bd3da16a428d692c63a65e8d31a9b837);
+            
+        
+
+        circle_marker_fd001a75d5d24ebdf965f8ee0f08e918.bindPopup(popup_962066a70a468ce3973a5c39d7a70397)
+        ;
+
+        
+    
+    
+            circle_marker_fd001a75d5d24ebdf965f8ee0f08e918.bindTooltip(
+                `<div>
+                     Kyrgyzstan - 64.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6df3efa3c2a9f0ee114737e7582fc6dd = L.circleMarker(
+                [39.09124018017583, 59.27543026236141],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e13560bddea13c28e751558599648d1d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ee2a050d35bb341f4527f1c73e7b3816 = $(`<div id="html_ee2a050d35bb341f4527f1c73e7b3816" style="width: 100.0%; height: 100.0%;">Turkmenistan<br>Planning Value Rate: 79.6%</div>`)[0];
+                popup_e13560bddea13c28e751558599648d1d.setContent(html_ee2a050d35bb341f4527f1c73e7b3816);
+            
+        
+
+        circle_marker_6df3efa3c2a9f0ee114737e7582fc6dd.bindPopup(popup_e13560bddea13c28e751558599648d1d)
+        ;
+
+        
+    
+    
+            circle_marker_6df3efa3c2a9f0ee114737e7582fc6dd.bindTooltip(
+                `<div>
+                     Turkmenistan - 79.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4af47080167a9141aa6d6d6149e164ae = L.circleMarker(
+                [32.51891731762539, 54.285451496891426],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8a85c1ef1ba743c37f74dd09ec77e466 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5123dc44ad21a099fea0be9e9cbe0e5d = $(`<div id="html_5123dc44ad21a099fea0be9e9cbe0e5d" style="width: 100.0%; height: 100.0%;">Iran (Islamic Republic of)<br>Planning Value Rate: 68.6%</div>`)[0];
+                popup_8a85c1ef1ba743c37f74dd09ec77e466.setContent(html_5123dc44ad21a099fea0be9e9cbe0e5d);
+            
+        
+
+        circle_marker_4af47080167a9141aa6d6d6149e164ae.bindPopup(popup_8a85c1ef1ba743c37f74dd09ec77e466)
+        ;
+
+        
+    
+    
+            circle_marker_4af47080167a9141aa6d6d6149e164ae.bindTooltip(
+                `<div>
+                     Iran (Islamic Republic of) - 68.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_21bd0a9e35f03d2253e1d4dbee54fbe6 = L.circleMarker(
+                [35.012614281129, 38.54423941961137],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_837684cb65e11e6974bfe3ee28fc039c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c764ecac42a211171acf3b289d5e6380 = $(`<div id="html_c764ecac42a211171acf3b289d5e6380" style="width: 100.0%; height: 100.0%;">Syrian Arab Republic<br>Planning Value Rate: 53.3%</div>`)[0];
+                popup_837684cb65e11e6974bfe3ee28fc039c.setContent(html_c764ecac42a211171acf3b289d5e6380);
+            
+        
+
+        circle_marker_21bd0a9e35f03d2253e1d4dbee54fbe6.bindPopup(popup_837684cb65e11e6974bfe3ee28fc039c)
+        ;
+
+        
+    
+    
+            circle_marker_21bd0a9e35f03d2253e1d4dbee54fbe6.bindTooltip(
+                `<div>
+                     Syrian Arab Republic - 53.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0959dd53a85f056dbd8edf6ad9df25ab = L.circleMarker(
+                [40.21660761230143, 45.00029001101479],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_600cfa8d0939216cb989a4104ea80751 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be094f73db5b0718216808cff0984c76 = $(`<div id="html_be094f73db5b0718216808cff0984c76" style="width: 100.0%; height: 100.0%;">Armenia<br>Planning Value Rate: 40.2%</div>`)[0];
+                popup_600cfa8d0939216cb989a4104ea80751.setContent(html_be094f73db5b0718216808cff0984c76);
+            
+        
+
+        circle_marker_0959dd53a85f056dbd8edf6ad9df25ab.bindPopup(popup_600cfa8d0939216cb989a4104ea80751)
+        ;
+
+        
+    
+    
+            circle_marker_0959dd53a85f056dbd8edf6ad9df25ab.bindTooltip(
+                `<div>
+                     Armenia - 40.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_875c1e53c9d6d5f36e6b0032e54b0e82 = L.circleMarker(
+                [62.811484968080336, 16.59626584684802],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_53b45f1d18be5ec97e75780503aee0f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e6db5edbcc9b6bb38e0fca3a642f936 = $(`<div id="html_7e6db5edbcc9b6bb38e0fca3a642f936" style="width: 100.0%; height: 100.0%;">Sweden<br>Planning Value Rate: 86.7%</div>`)[0];
+                popup_53b45f1d18be5ec97e75780503aee0f9.setContent(html_7e6db5edbcc9b6bb38e0fca3a642f936);
+            
+        
+
+        circle_marker_875c1e53c9d6d5f36e6b0032e54b0e82.bindPopup(popup_53b45f1d18be5ec97e75780503aee0f9)
+        ;
+
+        
+    
+    
+            circle_marker_875c1e53c9d6d5f36e6b0032e54b0e82.bindTooltip(
+                `<div>
+                     Sweden - 86.7%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_54bba52f495d536b0a7ece8562c157f5 = L.circleMarker(
+                [53.50634479481114, 27.98135261544803],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_c870a658b8dde1bf5c85efab5273f23d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_85e5d40555e129a24dd16e0e55ba8886 = $(`<div id="html_85e5d40555e129a24dd16e0e55ba8886" style="width: 100.0%; height: 100.0%;">Belarus<br>Planning Value Rate: 66.0%</div>`)[0];
+                popup_c870a658b8dde1bf5c85efab5273f23d.setContent(html_85e5d40555e129a24dd16e0e55ba8886);
+            
+        
+
+        circle_marker_54bba52f495d536b0a7ece8562c157f5.bindPopup(popup_c870a658b8dde1bf5c85efab5273f23d)
+        ;
+
+        
+    
+    
+            circle_marker_54bba52f495d536b0a7ece8562c157f5.bindTooltip(
+                `<div>
+                     Belarus - 66.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8848b61ab16cb1c2d1e844919d959035 = L.circleMarker(
+                [48.97301760592337, 31.369528906580406],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_cd86b98335f27fec919cd6a1048f47a1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_58ac3b939bd722deeca57fd856bef326 = $(`<div id="html_58ac3b939bd722deeca57fd856bef326" style="width: 100.0%; height: 100.0%;">Ukraine<br>Planning Value Rate: 68.0%</div>`)[0];
+                popup_cd86b98335f27fec919cd6a1048f47a1.setContent(html_58ac3b939bd722deeca57fd856bef326);
+            
+        
+
+        circle_marker_8848b61ab16cb1c2d1e844919d959035.bindPopup(popup_cd86b98335f27fec919cd6a1048f47a1)
+        ;
+
+        
+    
+    
+            circle_marker_8848b61ab16cb1c2d1e844919d959035.bindTooltip(
+                `<div>
+                     Ukraine - 68.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_35ddca8b6c05d495141095c90961655b = L.circleMarker(
+                [47.20367642606752, 28.41048279080328],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_58416e92c8d60a8f39a4159f31a60d6c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4e718eb6e43faad77a4f69e63faa83fc = $(`<div id="html_4e718eb6e43faad77a4f69e63faa83fc" style="width: 100.0%; height: 100.0%;">Republic of Moldova<br>Planning Value Rate: 59.5%</div>`)[0];
+                popup_58416e92c8d60a8f39a4159f31a60d6c.setContent(html_4e718eb6e43faad77a4f69e63faa83fc);
+            
+        
+
+        circle_marker_35ddca8b6c05d495141095c90961655b.bindPopup(popup_58416e92c8d60a8f39a4159f31a60d6c)
+        ;
+
+        
+    
+    
+            circle_marker_35ddca8b6c05d495141095c90961655b.bindTooltip(
+                `<div>
+                     Republic of Moldova - 59.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_88aa0630c3ca4e2641bf4c89a16e22f6 = L.circleMarker(
+                [45.857101035738005, 24.943252494635377],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e10f4442777ffd4ce9cf674417630263 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_acffb92c055de3700e949f5a896db5a9 = $(`<div id="html_acffb92c055de3700e949f5a896db5a9" style="width: 100.0%; height: 100.0%;">Romania<br>Planning Value Rate: 46.5%</div>`)[0];
+                popup_e10f4442777ffd4ce9cf674417630263.setContent(html_acffb92c055de3700e949f5a896db5a9);
+            
+        
+
+        circle_marker_88aa0630c3ca4e2641bf4c89a16e22f6.bindPopup(popup_e10f4442777ffd4ce9cf674417630263)
+        ;
+
+        
+    
+    
+            circle_marker_88aa0630c3ca4e2641bf4c89a16e22f6.bindTooltip(
+                `<div>
+                     Romania - 46.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0c612ff61827e566122c937b18ce33da = L.circleMarker(
+                [58.643695426630906, 25.824725613026608],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_05c8c8611bbfa4fe4fc4bbb4805e2190 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ac5de142b42902c3b566c56c45d22f98 = $(`<div id="html_ac5de142b42902c3b566c56c45d22f98" style="width: 100.0%; height: 100.0%;">Estonia<br>Planning Value Rate: 80.2%</div>`)[0];
+                popup_05c8c8611bbfa4fe4fc4bbb4805e2190.setContent(html_ac5de142b42902c3b566c56c45d22f98);
+            
+        
+
+        circle_marker_0c612ff61827e566122c937b18ce33da.bindPopup(popup_05c8c8611bbfa4fe4fc4bbb4805e2190)
+        ;
+
+        
+    
+    
+            circle_marker_0c612ff61827e566122c937b18ce33da.bindTooltip(
+                `<div>
+                     Estonia - 80.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8c55e17e7d1cff1987d58a5928578876 = L.circleMarker(
+                [39.06837194061471, 35.116900150938406],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_7305ac2a583343a686f7ed7d5105c374 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b29d1c2dc058e6b91ce724f0b0daca74 = $(`<div id="html_b29d1c2dc058e6b91ce724f0b0daca74" style="width: 100.0%; height: 100.0%;">Türkiye<br>Planning Value Rate: 60.2%</div>`)[0];
+                popup_7305ac2a583343a686f7ed7d5105c374.setContent(html_b29d1c2dc058e6b91ce724f0b0daca74);
+            
+        
+
+        circle_marker_8c55e17e7d1cff1987d58a5928578876.bindPopup(popup_7305ac2a583343a686f7ed7d5105c374)
+        ;
+
+        
+    
+    
+            circle_marker_8c55e17e7d1cff1987d58a5928578876.bindTooltip(
+                `<div>
+                     Türkiye - 60.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d665b7997a20959d3a44752246761f41 = L.circleMarker(
+                [41.141353306048785, 20.03242643144321],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_6e6cf79d4b0efa510f7c2ecc9beae033 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc916beebe5b9dbe5947a61be51d7e52 = $(`<div id="html_dc916beebe5b9dbe5947a61be51d7e52" style="width: 100.0%; height: 100.0%;">Albania<br>Planning Value Rate: 6.3%</div>`)[0];
+                popup_6e6cf79d4b0efa510f7c2ecc9beae033.setContent(html_dc916beebe5b9dbe5947a61be51d7e52);
+            
+        
+
+        circle_marker_d665b7997a20959d3a44752246761f41.bindPopup(popup_6e6cf79d4b0efa510f7c2ecc9beae033)
+        ;
+
+        
+    
+    
+            circle_marker_d665b7997a20959d3a44752246761f41.bindTooltip(
+                `<div>
+                     Albania - 6.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_989c53c318c66e75c19f7d86477213fa = L.circleMarker(
+                [-8.852497470848528, 159.9666154474296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_08753e1cafa1041cc99c544239db70d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fde0e9a96842643476d0d97137a92e9b = $(`<div id="html_fde0e9a96842643476d0d97137a92e9b" style="width: 100.0%; height: 100.0%;">Solomon Islands<br>Planning Value Rate: 38.0%</div>`)[0];
+                popup_08753e1cafa1041cc99c544239db70d4.setContent(html_fde0e9a96842643476d0d97137a92e9b);
+            
+        
+
+        circle_marker_989c53c318c66e75c19f7d86477213fa.bindPopup(popup_08753e1cafa1041cc99c544239db70d4)
+        ;
+
+        
+    
+    
+            circle_marker_989c53c318c66e75c19f7d86477213fa.bindTooltip(
+                `<div>
+                     Solomon Islands - 38.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f32d43957853a5f34e9df8fe192d6bba = L.circleMarker(
+                [7.700534417248105, 80.66723574931648],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_20355df969bc29d2dfb1bdcff6d89670 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_007bbcf0bcede16e17ed037001becc5c = $(`<div id="html_007bbcf0bcede16e17ed037001becc5c" style="width: 100.0%; height: 100.0%;">Sri Lanka<br>Planning Value Rate: 74.3%</div>`)[0];
+                popup_20355df969bc29d2dfb1bdcff6d89670.setContent(html_007bbcf0bcede16e17ed037001becc5c);
+            
+        
+
+        circle_marker_f32d43957853a5f34e9df8fe192d6bba.bindPopup(popup_20355df969bc29d2dfb1bdcff6d89670)
+        ;
+
+        
+    
+    
+            circle_marker_f32d43957853a5f34e9df8fe192d6bba.bindTooltip(
+                `<div>
+                     Sri Lanka - 74.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_438435cca82aa21e8cfd19827e9f62ca = L.circleMarker(
+                [36.555066531858685, 103.88361230063249],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_6245191227891dae9f827145f2558e14 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d0bc75aa5095e6a585b18a07634f792f = $(`<div id="html_d0bc75aa5095e6a585b18a07634f792f" style="width: 100.0%; height: 100.0%;">China<br>Planning Value Rate: 96.6%</div>`)[0];
+                popup_6245191227891dae9f827145f2558e14.setContent(html_d0bc75aa5095e6a585b18a07634f792f);
+            
+        
+
+        circle_marker_438435cca82aa21e8cfd19827e9f62ca.bindPopup(popup_6245191227891dae9f827145f2558e14)
+        ;
+
+        
+    
+    
+            circle_marker_438435cca82aa21e8cfd19827e9f62ca.bindTooltip(
+                `<div>
+                     China - 96.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f5f6189110cd62c0559a65a4671c70d5 = L.circleMarker(
+                [53.91477348053706, -2.8531353951805545],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_e42225775ee732898d4457c10348203b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a3a07a2583abc523fa6a9936bd75c48 = $(`<div id="html_5a3a07a2583abc523fa6a9936bd75c48" style="width: 100.0%; height: 100.0%;">United Kingdom of Great Britain and Northern Ireland<br>Planning Value Rate: 86.5%</div>`)[0];
+                popup_e42225775ee732898d4457c10348203b.setContent(html_5a3a07a2583abc523fa6a9936bd75c48);
+            
+        
+
+        circle_marker_f5f6189110cd62c0559a65a4671c70d5.bindPopup(popup_e42225775ee732898d4457c10348203b)
+        ;
+
+        
+    
+    
+            circle_marker_f5f6189110cd62c0559a65a4671c70d5.bindTooltip(
+                `<div>
+                     United Kingdom of Great Britain and Northern Ireland - 86.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_47c14bf10b3270c9079555850c028a94 = L.circleMarker(
+                [40.22069054766167, 47.553909558006055],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_3547190ceeb55b60d54a328ba06e40a0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ccd49a1469ffde75eaad75e93d38cd23 = $(`<div id="html_ccd49a1469ffde75eaad75e93d38cd23" style="width: 100.0%; height: 100.0%;">Azerbaijan<br>Planning Value Rate: 21.5%</div>`)[0];
+                popup_3547190ceeb55b60d54a328ba06e40a0.setContent(html_ccd49a1469ffde75eaad75e93d38cd23);
+            
+        
+
+        circle_marker_47c14bf10b3270c9079555850c028a94.bindPopup(popup_3547190ceeb55b60d54a328ba06e40a0)
+        ;
+
+        
+    
+    
+            circle_marker_47c14bf10b3270c9079555850c028a94.bindTooltip(
+                `<div>
+                     Azerbaijan - 21.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f6de4aea27b2d16dd2429acabbf587e4 = L.circleMarker(
+                [42.16201501415301, 43.48154265409026],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_666209d0c96e211f2e22f4bc9bfece49 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_561553ee0a94eed7e181439c44137d5d = $(`<div id="html_561553ee0a94eed7e181439c44137d5d" style="width: 100.0%; height: 100.0%;">Georgia<br>Planning Value Rate: 51.3%</div>`)[0];
+                popup_666209d0c96e211f2e22f4bc9bfece49.setContent(html_561553ee0a94eed7e181439c44137d5d);
+            
+        
+
+        circle_marker_f6de4aea27b2d16dd2429acabbf587e4.bindPopup(popup_666209d0c96e211f2e22f4bc9bfece49)
+        ;
+
+        
+    
+    
+            circle_marker_f6de4aea27b2d16dd2429acabbf587e4.bindTooltip(
+                `<div>
+                     Georgia - 51.3%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a45dd5f8ceed20c32410a5f9de485f5d = L.circleMarker(
+                [11.763799362297663, 122.90267236988682],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_771270d81f7d2b43616eb76c614de0b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9789ab37f639e623c3c04634a1a0457 = $(`<div id="html_a9789ab37f639e623c3c04634a1a0457" style="width: 100.0%; height: 100.0%;">Philippines<br>Planning Value Rate: 56.0%</div>`)[0];
+                popup_771270d81f7d2b43616eb76c614de0b1.setContent(html_a9789ab37f639e623c3c04634a1a0457);
+            
+        
+
+        circle_marker_a45dd5f8ceed20c32410a5f9de485f5d.bindPopup(popup_771270d81f7d2b43616eb76c614de0b1)
+        ;
+
+        
+    
+    
+            circle_marker_a45dd5f8ceed20c32410a5f9de485f5d.bindTooltip(
+                `<div>
+                     Philippines - 56.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_823b406a80504cd78e7d22bd0449a3ec = L.circleMarker(
+                [49.775245294369, 15.334558102365815],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_2cff5041de00445340cd2f65ab3ea807 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_565eb6cb8e4a5a7757f582ad38c00f67 = $(`<div id="html_565eb6cb8e4a5a7757f582ad38c00f67" style="width: 100.0%; height: 100.0%;">Czechia<br>Planning Value Rate: 85.7%</div>`)[0];
+                popup_2cff5041de00445340cd2f65ab3ea807.setContent(html_565eb6cb8e4a5a7757f582ad38c00f67);
+            
+        
+
+        circle_marker_823b406a80504cd78e7d22bd0449a3ec.bindPopup(popup_2cff5041de00445340cd2f65ab3ea807)
+        ;
+
+        
+    
+    
+            circle_marker_823b406a80504cd78e7d22bd0449a3ec.bindTooltip(
+                `<div>
+                     Czechia - 85.7%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ac9493864da59bd0061763a366942b28 = L.circleMarker(
+                [15.427276751412931, 38.67818692786484],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_f007cf5972f22e146732b0b7467cb74f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a129d5da7e414551ec3a9ee82fe1858 = $(`<div id="html_4a129d5da7e414551ec3a9ee82fe1858" style="width: 100.0%; height: 100.0%;">Eritrea<br>Planning Value Rate: 21.0%</div>`)[0];
+                popup_f007cf5972f22e146732b0b7467cb74f.setContent(html_4a129d5da7e414551ec3a9ee82fe1858);
+            
+        
+
+        circle_marker_ac9493864da59bd0061763a366942b28.bindPopup(popup_f007cf5972f22e146732b0b7467cb74f)
+        ;
+
+        
+    
+    
+            circle_marker_ac9493864da59bd0061763a366942b28.bindTooltip(
+                `<div>
+                     Eritrea - 21.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0869692aa83add784fdff91c60452464 = L.circleMarker(
+                [-23.248041946292087, -58.387387833505706],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_7f5603ee856341fe6f0d53dbbd6fb885 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6acc136e613c69a91bb499a5eeea0736 = $(`<div id="html_6acc136e613c69a91bb499a5eeea0736" style="width: 100.0%; height: 100.0%;">Paraguay<br>Planning Value Rate: 78.9%</div>`)[0];
+                popup_7f5603ee856341fe6f0d53dbbd6fb885.setContent(html_6acc136e613c69a91bb499a5eeea0736);
+            
+        
+
+        circle_marker_0869692aa83add784fdff91c60452464.bindPopup(popup_7f5603ee856341fe6f0d53dbbd6fb885)
+        ;
+
+        
+    
+    
+            circle_marker_0869692aa83add784fdff91c60452464.bindTooltip(
+                `<div>
+                     Paraguay - 78.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2c1673656543ac3f3c3319f5c3ce6822 = L.circleMarker(
+                [15.913231950143004, 47.535044758543485],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_aabe740ee1cd176e63ec0fc600227f2a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb09a6e1beeb239bd2eb6269339547ea = $(`<div id="html_bb09a6e1beeb239bd2eb6269339547ea" style="width: 100.0%; height: 100.0%;">Yemen<br>Planning Value Rate: 40.5%</div>`)[0];
+                popup_aabe740ee1cd176e63ec0fc600227f2a.setContent(html_bb09a6e1beeb239bd2eb6269339547ea);
+            
+        
+
+        circle_marker_2c1673656543ac3f3c3319f5c3ce6822.bindPopup(popup_aabe740ee1cd176e63ec0fc600227f2a)
+        ;
+
+        
+    
+    
+            circle_marker_2c1673656543ac3f3c3319f5c3ce6822.bindTooltip(
+                `<div>
+                     Yemen - 40.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_02540c39f6fe1525fa7c8bacb93973ed = L.circleMarker(
+                [29.885394698302058, -8.420479544549693],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_b13cee61827798af48ac1454108c0fb7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_04089ee5551b9839ca28115645f74b54 = $(`<div id="html_04089ee5551b9839ca28115645f74b54" style="width: 100.0%; height: 100.0%;">Morocco<br>Planning Value Rate: 72.0%</div>`)[0];
+                popup_b13cee61827798af48ac1454108c0fb7.setContent(html_04089ee5551b9839ca28115645f74b54);
+            
+        
+
+        circle_marker_02540c39f6fe1525fa7c8bacb93973ed.bindPopup(popup_b13cee61827798af48ac1454108c0fb7)
+        ;
+
+        
+    
+    
+            circle_marker_02540c39f6fe1525fa7c8bacb93973ed.bindTooltip(
+                `<div>
+                     Morocco - 72.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_80f52c36f989736d968eb31af665b6fe = L.circleMarker(
+                [26.50661999974957, 29.844461513124415],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_404560b5c41c34a8cbeadfef741e9f09 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d95e753dc2f5a136646ab86689e1132a = $(`<div id="html_d95e753dc2f5a136646ab86689e1132a" style="width: 100.0%; height: 100.0%;">Egypt<br>Planning Value Rate: 80.0%</div>`)[0];
+                popup_404560b5c41c34a8cbeadfef741e9f09.setContent(html_d95e753dc2f5a136646ab86689e1132a);
+            
+        
+
+        circle_marker_80f52c36f989736d968eb31af665b6fe.bindPopup(popup_404560b5c41c34a8cbeadfef741e9f09)
+        ;
+
+        
+    
+    
+            circle_marker_80f52c36f989736d968eb31af665b6fe.bindTooltip(
+                `<div>
+                     Egypt - 80.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e5275f4a74e3659acfb9df3c5ddd358e = L.circleMarker(
+                [26.997460407020338, 17.974352779160352],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_dbd62c2c3d8451ab362a5497d1a71cc7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c3d07908006eaf2f4cae3c15fcc0f76 = $(`<div id="html_4c3d07908006eaf2f4cae3c15fcc0f76" style="width: 100.0%; height: 100.0%;">Libya<br>Planning Value Rate: 24.0%</div>`)[0];
+                popup_dbd62c2c3d8451ab362a5497d1a71cc7.setContent(html_4c3d07908006eaf2f4cae3c15fcc0f76);
+            
+        
+
+        circle_marker_e5275f4a74e3659acfb9df3c5ddd358e.bindPopup(popup_dbd62c2c3d8451ab362a5497d1a71cc7)
+        ;
+
+        
+    
+    
+            circle_marker_e5275f4a74e3659acfb9df3c5ddd358e.bindTooltip(
+                `<div>
+                     Libya - 24.0%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3b18bac8bbe7264a1d6c89ca8619fb27 = L.circleMarker(
+                [8.653999188132575, 39.551255792937745],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_329d26dee57ef773e79bd79698410c32 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_561e9af4ab40d4fd9ff2ee9f6445aebe = $(`<div id="html_561e9af4ab40d4fd9ff2ee9f6445aebe" style="width: 100.0%; height: 100.0%;">Ethiopia<br>Planning Value Rate: 62.6%</div>`)[0];
+                popup_329d26dee57ef773e79bd79698410c32.setContent(html_561e9af4ab40d4fd9ff2ee9f6445aebe);
+            
+        
+
+        circle_marker_3b18bac8bbe7264a1d6c89ca8619fb27.bindPopup(popup_329d26dee57ef773e79bd79698410c32)
+        ;
+
+        
+    
+    
+            circle_marker_3b18bac8bbe7264a1d6c89ca8619fb27.bindTooltip(
+                `<div>
+                     Ethiopia - 62.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_88085c9f376c4812c04527e677d7423f = L.circleMarker(
+                [1.2954855035097297, 32.35755031998686],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_b9db4cc12296ca0134fec0927456bdd5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6754a4685f7c3b5929914eb846421bf3 = $(`<div id="html_6754a4685f7c3b5929914eb846421bf3" style="width: 100.0%; height: 100.0%;">Uganda<br>Planning Value Rate: 65.5%</div>`)[0];
+                popup_b9db4cc12296ca0134fec0927456bdd5.setContent(html_6754a4685f7c3b5929914eb846421bf3);
+            
+        
+
+        circle_marker_88085c9f376c4812c04527e677d7423f.bindPopup(popup_b9db4cc12296ca0134fec0927456bdd5)
+        ;
+
+        
+    
+    
+            circle_marker_88085c9f376c4812c04527e677d7423f.bindTooltip(
+                `<div>
+                     Uganda - 65.5%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8e42943afc47017c273909b6b20b5057 = L.circleMarker(
+                [-2.0135144658341346, 29.91896392224289],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_a2ce55786443132deec62ce2a275807a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f90d9a9e77818ab062f72566da684314 = $(`<div id="html_f90d9a9e77818ab062f72566da684314" style="width: 100.0%; height: 100.0%;">Rwanda<br>Planning Value Rate: 72.1%</div>`)[0];
+                popup_a2ce55786443132deec62ce2a275807a.setContent(html_f90d9a9e77818ab062f72566da684314);
+            
+        
+
+        circle_marker_8e42943afc47017c273909b6b20b5057.bindPopup(popup_a2ce55786443132deec62ce2a275807a)
+        ;
+
+        
+    
+    
+            circle_marker_8e42943afc47017c273909b6b20b5057.bindTooltip(
+                `<div>
+                     Rwanda - 72.1%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ceb61972ce9313244daaf3dbfc35f20f = L.circleMarker(
+                [44.1807677629747, 17.816883270390086],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_6cb48a71c14d5f9b932c49526cb8b7dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ebb0280a2d433a95655f7b218b505910 = $(`<div id="html_ebb0280a2d433a95655f7b218b505910" style="width: 100.0%; height: 100.0%;">Bosnia and Herzegovina<br>Planning Value Rate: 21.9%</div>`)[0];
+                popup_6cb48a71c14d5f9b932c49526cb8b7dd.setContent(html_ebb0280a2d433a95655f7b218b505910);
+            
+        
+
+        circle_marker_ceb61972ce9313244daaf3dbfc35f20f.bindPopup(popup_6cb48a71c14d5f9b932c49526cb8b7dd)
+        ;
+
+        
+    
+    
+            circle_marker_ceb61972ce9313244daaf3dbfc35f20f.bindTooltip(
+                `<div>
+                     Bosnia and Herzegovina - 21.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_458ea41284dc38f5f0005d851761ef30 = L.circleMarker(
+                [41.60592964714007, 21.697903375280845],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_fc19e2c41a7086576037992d5f64f0de = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b1f93ae41d580953987e3b73217206b = $(`<div id="html_3b1f93ae41d580953987e3b73217206b" style="width: 100.0%; height: 100.0%;">North Macedonia<br>Planning Value Rate: 29.6%</div>`)[0];
+                popup_fc19e2c41a7086576037992d5f64f0de.setContent(html_3b1f93ae41d580953987e3b73217206b);
+            
+        
+
+        circle_marker_458ea41284dc38f5f0005d851761ef30.bindPopup(popup_fc19e2c41a7086576037992d5f64f0de)
+        ;
+
+        
+    
+    
+            circle_marker_458ea41284dc38f5f0005d851761ef30.bindTooltip(
+                `<div>
+                     North Macedonia - 29.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_df288f1cb6877fac4e251fd9dd0496d7 = L.circleMarker(
+                [44.23303653365162, 20.819651926382583],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_63b85d2202918449e33306b48774a8ea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0061dfa10c269065d2a5380b266f0ef1 = $(`<div id="html_0061dfa10c269065d2a5380b266f0ef1" style="width: 100.0%; height: 100.0%;">Serbia<br>Planning Value Rate: 38.4%</div>`)[0];
+                popup_63b85d2202918449e33306b48774a8ea.setContent(html_0061dfa10c269065d2a5380b266f0ef1);
+            
+        
+
+        circle_marker_df288f1cb6877fac4e251fd9dd0496d7.bindPopup(popup_63b85d2202918449e33306b48774a8ea)
+        ;
+
+        
+    
+    
+            circle_marker_df288f1cb6877fac4e251fd9dd0496d7.bindTooltip(
+                `<div>
+                     Serbia - 38.4%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7ab53e8e89caf667a66a88ee0dc85837 = L.circleMarker(
+                [42.78903960655908, 19.2861817215929],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_8f0cfdddb4148765889926db9754451e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cb02ca2e149f35b5609de3c64afa14fc = $(`<div id="html_cb02ca2e149f35b5609de3c64afa14fc" style="width: 100.0%; height: 100.0%;">Montenegro<br>Planning Value Rate: 32.9%</div>`)[0];
+                popup_8f0cfdddb4148765889926db9754451e.setContent(html_cb02ca2e149f35b5609de3c64afa14fc);
+            
+        
+
+        circle_marker_7ab53e8e89caf667a66a88ee0dc85837.bindPopup(popup_8f0cfdddb4148765889926db9754451e)
+        ;
+
+        
+    
+    
+            circle_marker_7ab53e8e89caf667a66a88ee0dc85837.bindTooltip(
+                `<div>
+                     Montenegro - 32.9%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b7d38d17a6ac9561b9c1de658e1e97c = L.circleMarker(
+                [10.428237089201879, -61.33036691444967],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_054945b7c9b749cbf20e1a60acad4391 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d78b25dfaaa8567f2e35d0cfd8302d99 = $(`<div id="html_d78b25dfaaa8567f2e35d0cfd8302d99" style="width: 100.0%; height: 100.0%;">Trinidad and Tobago<br>Planning Value Rate: 58.2%</div>`)[0];
+                popup_054945b7c9b749cbf20e1a60acad4391.setContent(html_d78b25dfaaa8567f2e35d0cfd8302d99);
+            
+        
+
+        circle_marker_1b7d38d17a6ac9561b9c1de658e1e97c.bindPopup(popup_054945b7c9b749cbf20e1a60acad4391)
+        ;
+
+        
+    
+    
+            circle_marker_1b7d38d17a6ac9561b9c1de658e1e97c.bindTooltip(
+                `<div>
+                     Trinidad and Tobago - 58.2%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9da67cdad6ea55d95779c5243ca449e9 = L.circleMarker(
+                [7.292890133516845, 30.198617582461907],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+        var popup_bc3e0d841412fa6a33ce6f2118c9c2e7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6e49a7d3292169e054fc2b4f8e73968 = $(`<div id="html_a6e49a7d3292169e054fc2b4f8e73968" style="width: 100.0%; height: 100.0%;">South Sudan<br>Planning Value Rate: 5.6%</div>`)[0];
+                popup_bc3e0d841412fa6a33ce6f2118c9c2e7.setContent(html_a6e49a7d3292169e054fc2b4f8e73968);
+            
+        
+
+        circle_marker_9da67cdad6ea55d95779c5243ca449e9.bindPopup(popup_bc3e0d841412fa6a33ce6f2118c9c2e7)
+        ;
+
+        
+    
+    
+            circle_marker_9da67cdad6ea55d95779c5243ca449e9.bindTooltip(
+                `<div>
+                     South Sudan - 5.6%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            tile_layer_86d7afc6e33bc225245e5e2af5437b50.addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+    
+            heat_map_c622390e49dc62586fc8d45b0195c16d.addTo(map_c2cddf9e38fd9918549c5e7a22d8b97f);
+        
+</script>
+</html>
